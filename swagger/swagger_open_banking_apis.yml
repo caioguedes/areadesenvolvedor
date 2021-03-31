@@ -8029,7 +8029,9 @@ components:
         - meta
       properties:
         data:
-          $ref: '#/components/schemas/BusinessFinancialRelationData'
+          type: array
+          items:
+            $ref: '#/components/schemas/BusinessFinancialRelationData'
         links:
           $ref: '#/components/schemas/Links'
         meta:
@@ -8043,7 +8045,9 @@ components:
         - meta
       properties:
         data:
-          $ref: '#/components/schemas/BusinessIdentificationData'
+          type: array
+          items:
+            $ref: '#/components/schemas/BusinessIdentificationData'
         links:
           $ref: '#/components/schemas/Links'
         meta:
@@ -8057,7 +8061,9 @@ components:
         - meta
       properties:
         data:
-          $ref: '#/components/schemas/BusinessQualificationData'
+          type: array
+          items:
+            $ref: '#/components/schemas/BusinessQualificationData'
         links:
           $ref: '#/components/schemas/Links'
         meta:
@@ -8221,7 +8227,9 @@ components:
         - meta
       properties:
         data:
-          $ref: '#/components/schemas/PersonalFinancialRelationData'
+          type: array
+          items:
+            $ref: '#/components/schemas/PersonalFinancialRelationData'
         links:
           $ref: '#/components/schemas/Links'
         meta:
@@ -8235,7 +8243,9 @@ components:
         - meta
       properties:
         data:
-          $ref: '#/components/schemas/PersonalIdentificationData'
+          type: array
+          items:
+            $ref: '#/components/schemas/PersonalIdentificationData'
         links:
           $ref: '#/components/schemas/Links'
         meta:
@@ -8249,7 +8259,9 @@ components:
         - meta
       properties:
         data:
-          $ref: '#/components/schemas/PersonalQualificationData'
+          type: array
+          items:
+            $ref: '#/components/schemas/PersonalQualificationData'
         links:
           $ref: '#/components/schemas/Links'
         meta:
