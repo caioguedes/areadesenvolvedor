@@ -6610,14 +6610,15 @@ OpenId ( Scopes: openId customers )
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"brandID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"59624621661211111"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"brandID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"29698749425984912674"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"brandName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Organização A"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"companyCnpj"</span><span class="p">:</span><span class="w"> </span><span class="s2">"21128159000166"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cartão Universitário"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"productType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OUTROS"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"productAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Informações Adicionais"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"productAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"creditCardNetwork"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VISA"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"networkAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NA"</span><span class="w">
+      </span><span class="nl">"networkAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NA"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"creditCardAccountId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XXZTR3459087"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
   </span><span class="nl">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -6881,10 +6882,12 @@ OpenId ( Scopes: openId credit-card )
     </span><span class="nl">"productAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OURO_INTERNACIONAL"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"creditCardNetwork"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VISA"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"networkAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NA"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"paymentMethod"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"identificationNumber"</span><span class="p">:</span><span class="w"> </span><span class="mi">4453</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"isMultipleCreditCard"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
-    </span><span class="p">}</span><span class="w">
+    </span><span class="nl">"paymentMethod"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"identificationNumber"</span><span class="p">:</span><span class="w"> </span><span class="mi">4453</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"isMultipleCreditCard"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"self"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.banco.com.br/open-banking/api/v1/resource"</span><span class="p">,</span><span class="w">
@@ -7484,6 +7487,7 @@ OpenId ( Scopes: openId credit-card )
       </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"transactions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nl">"identificationNumber"</span><span class="p">:</span><span class="w"> </span><span class="mi">4453</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"lineName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CREDITO_A_VISTA"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"transactionName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PGTO"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"billIdentification"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3459087XXZTR"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"creditDebitType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DEBITO"</span><span class="p">,</span><span class="w">
@@ -16581,14 +16585,15 @@ OpenId ( Scopes: openId invoice-financings )
 <a id="tocScreditcardaccountsdata"></a>
 <a id="tocscreditcardaccountsdata"></a></p>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"brandID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"59624621661211111"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"brandID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"29698749425984912674"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"brandName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Organização A"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"companyCnpj"</span><span class="p">:</span><span class="w"> </span><span class="s2">"21128159000166"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cartão Universitário"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"productType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OUTROS"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"productAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Informações Adicionais"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"productAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"creditCardNetwork"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VISA"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"networkAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NA"</span><span class="w">
+  </span><span class="nl">"networkAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NA"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"creditCardAccountId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XXZTR3459087"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
 </span></code></pre></div>
@@ -16609,7 +16614,7 @@ OpenId ( Scopes: openId invoice-financings )
 <td>brandID</td>
 <td>string</td>
 <td>true</td>
-<td>Identifica da Marca reportada pelo participante do Open Banking. O conceito a que se refere a &#39;marca&#39; é em essência uma promessa da empresa em fornecer uma série específica de atributos, benefícios e serviços uniformes aos clientes</td>
+<td>Identifica a Marca reportada pelo participante do Open Banking. O conceito a que se refere a &#39;marca&#39; é em essência uma promessa da empresa em fornecer uma série específica de atributos, benefícios e serviços uniformes aos clientes.</td>
 </tr>
 <tr>
 <td>brandName</td>
@@ -16652,6 +16657,12 @@ OpenId ( Scopes: openId invoice-financings )
 <td>string</td>
 <td>false</td>
 <td>Texto livre para especificar categoria de bandeira marcada como &#39;OUTRAS&#39;</td>
+</tr>
+<tr>
+<td>creditCardAccountId</td>
+<td>string</td>
+<td>true</td>
+<td>Um identificador único e imutável usado para identificar o recurso da conta de pagamento pós paga. Este identificador não tem significado para o proprietário da conta</td>
 </tr>
 </tbody></table>
 
@@ -16836,6 +16847,7 @@ OpenId ( Scopes: openId invoice-financings )
 
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"identificationNumber"</span><span class="p">:</span><span class="w"> </span><span class="mi">4453</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"lineName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CREDITO_A_VISTA"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"transactionName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PGTO"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"billIdentification"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3459087XXZTR"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"creditDebitType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DEBITO"</span><span class="p">,</span><span class="w">
@@ -16875,6 +16887,12 @@ OpenId ( Scopes: openId invoice-financings )
 <td>number</td>
 <td>true</td>
 <td>Número de identificação do cartão:  corresponde aos 4 últimos dígitos para PF, preencher com um identificador para PJ, com as caracteristicas definidas para os ID´s no Open Banking.</td>
+</tr>
+<tr>
+<td>lineName</td>
+<td><a href="#schemaenumcreditcardaccountslinename">EnumCreditCardAccountsLineName</a></td>
+<td>false</td>
+<td>Modalidade de operação - Lista de   Modalidades de Operação relacionadas às Contas de Pagamento Pós-Pagas</td>
 </tr>
 <tr>
 <td>transactionName</td>
@@ -16998,6 +17016,7 @@ OpenId ( Scopes: openId invoice-financings )
   </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"transactions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"identificationNumber"</span><span class="p">:</span><span class="w"> </span><span class="mi">4453</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"lineName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CREDITO_A_VISTA"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"transactionName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PGTO"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"billIdentification"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3459087XXZTR"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"creditDebitType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DEBITO"</span><span class="p">,</span><span class="w">
@@ -26639,14 +26658,15 @@ Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoa
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"brandID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"59624621661211111"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"brandID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"29698749425984912674"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"brandName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Organização A"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"companyCnpj"</span><span class="p">:</span><span class="w"> </span><span class="s2">"21128159000166"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cartão Universitário"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"productType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OUTROS"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"productAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Informações Adicionais"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"productAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"creditCardNetwork"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VISA"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"networkAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NA"</span><span class="w">
+      </span><span class="nl">"networkAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NA"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"creditCardAccountId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XXZTR3459087"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
   </span><span class="nl">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -26705,10 +26725,12 @@ Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoa
     </span><span class="nl">"productAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OURO_INTERNACIONAL"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"creditCardNetwork"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VISA"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"networkAdditionalInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NA"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"paymentMethod"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"identificationNumber"</span><span class="p">:</span><span class="w"> </span><span class="mi">4453</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"isMultipleCreditCard"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
-    </span><span class="p">}</span><span class="w">
+    </span><span class="nl">"paymentMethod"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"identificationNumber"</span><span class="p">:</span><span class="w"> </span><span class="mi">4453</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"isMultipleCreditCard"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"self"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.banco.com.br/open-banking/api/v1/resource"</span><span class="p">,</span><span class="w">
@@ -26771,9 +26793,9 @@ Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoa
 </tr>
 <tr>
 <td>» paymentMethod</td>
-<td><a href="#schemacreditcardsaccountpaymentmethod">CreditCardsAccountPaymentMethod</a></td>
+<td>[<a href="#schemacreditcardsaccountpaymentmethod">CreditCardsAccountPaymentMethod</a>]</td>
 <td>true</td>
-<td>Conjunto de informações relativas aos Meios de Pagamento da Conta de pagamento pós-paga</td>
+<td>[Conjunto de informações relativas aos Meios de Pagamento da Conta de pagamento pós-paga]</td>
 </tr>
 <tr>
 <td>links</td>
@@ -26937,6 +26959,7 @@ Adiantamento a depositantes, Crédito pessoal sem consignação, Crédito pessoa
       </span><span class="nl">"requestDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-21T08:30:00Z"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"transactions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nl">"identificationNumber"</span><span class="p">:</span><span class="w"> </span><span class="mi">4453</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"lineName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CREDITO_A_VISTA"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"transactionName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PGTO"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"billIdentification"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3459087XXZTR"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"creditDebitType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DEBITO"</span><span class="p">,</span><span class="w">
