@@ -1,8 +1,8 @@
 type: object
-description: Conjunto de informações referentes às garantias que avalizam a operação de crédito de financiamentos contratada
+description: "Conjunto de informações referentes às garantias que avalizam a operação de crédito de financiamentos contratada"
 required:
   - currency
-  - contractedWarranties
+  - warranties
 properties:
   currency:
     type: string
@@ -10,13 +10,13 @@ properties:
     maxLength: 3
     format: CurrencyString
     description: |
-      Moeda referente ao valor da garantia, segundo modelo ISO-4217. p.ex. 'BRL'
-      Todos os valores monetários informados estão representados com a moeda vigente do Brasil
-    example: BRL
-  contractedWarranties:
+      "Moeda referente ao valor da garantia, segundo modelo ISO-4217. p.ex. 'BRL'
+      Todos os valores monetários informados estão representados com a moeda vigente do Brasil"
+    example: "BRL"
+  warranties:
     type: array
     items:
       $ref: ./FinancingsContractedWarranty.yaml
     minItems: 1
-    description: Lista das garantias que avalizam a operação de crédito contratada
+    description: "Lista das garantias que avalizam a operação de crédito contratada"
 additionalProperties: false
