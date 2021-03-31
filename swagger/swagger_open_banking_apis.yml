@@ -17,6 +17,7 @@ servers:
     description: Servidor de Homologação
 tags:
   - name: API - Consentimento
+  - name: API - Resources
   - name: API - Dados Cadastrais
   - name: API - Cartão de Crédito
   - name: API - Contas
@@ -41,7 +42,7 @@ paths:
 
         ### Especificação em OAS 3.0
 
-        <a href="swagger/swagger_consents.yaml">Download da Especificação (OAS 3.0)</a>
+        <a href="swagger/swagger_consents_apis.yaml">Download da Especificação (OAS 3.0)</a>
       operationId: postCreateConsents
       parameters:
         - $ref: '#/components/parameters/Authorization'
@@ -102,7 +103,7 @@ paths:
 
         ### Especificação em OAS 3.0
 
-        <a href="swagger/swagger_consents.yaml">Download da Especificação (OAS 3.0)</a>
+        <a href="swagger/swagger_consents_apis.yaml">Download da Especificação (OAS 3.0)</a>
       operationId: getConsentsConsentId
       parameters:
         - $ref: '#/components/parameters/consentId'
@@ -154,7 +155,7 @@ paths:
 
         ### Especificação em OAS 3.0
 
-        <a href="swagger/swagger_consents.yaml">Download da Especificação (OAS 3.0)</a>
+        <a href="swagger/swagger_consents_apis.yaml">Download da Especificação (OAS 3.0)</a>
       operationId: deleteConsentsConsentId
       parameters:
         - $ref: '#/components/parameters/consentId'
@@ -191,6 +192,57 @@ paths:
       security:
         - OAuth2Security:
             - consents
+  /resources:
+    get:
+      tags:
+        - API - Resources
+      summary: Obtém a lista de recursos consentidos pelo cliente.
+      description: |
+        |Versão|
+        |:-----|
+        |1     |
+
+        ### Visão Geral
+
+        Método para obter a lista de recursos mantidos pelo cliente na instituição transmissora e para as quais ele tenha fornecido consentimento.
+
+        ### Especificação em OAS 3.0
+
+        <a href="swagger/swagger_resources_apis.yaml">Download da Especificação (OAS 3.0)</a>
+      operationId: getResources
+      parameters:
+        - $ref: '#/components/parameters/Authorization'
+        - $ref: '#/components/parameters/xFapiAuthDate'
+        - $ref: '#/components/parameters/xFapiCustomerIpAddress'
+        - $ref: '#/components/parameters/xFapiInteractionId'
+        - $ref: '#/components/parameters/xCustomerUserAgent'
+        - $ref: '#/components/parameters/page'
+        - $ref: '#/components/parameters/pageSize'
+      responses:
+        '200':
+          $ref: '#/components/responses/OKResponseResourceList'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '405':
+          $ref: '#/components/responses/MethodNotAllowed'
+        '406':
+          $ref: '#/components/responses/NotAcceptable'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+        default:
+          $ref: '#/components/responses/OKResponseResourceList'
+      security:
+        - OpenId:
+            - openId
+            - resources
   /customers/v1/personal/identifications:
     get:
       tags:
@@ -1481,7 +1533,7 @@ paths:
         ### Especificação em OAS 3.0
 
         <a href='swagger/swagger_loans_apis.yaml'>Download da Especificação (OAS 3.0)</a>
-      operationId: getContracts
+      operationId: getLoansContracts
       parameters:
         - $ref: '#/components/parameters/Authorization'
         - $ref: '#/components/parameters/xFapiAuthDate'
@@ -1554,7 +1606,7 @@ paths:
         ### Especificação em OAS 3.0
 
         <a href='swagger/swagger_loans_apis.yaml'>Download da Especificação (OAS 3.0)</a>
-      operationId: getContractsContractId
+      operationId: getLoansContractsContractId
       parameters:
         - $ref: '#/components/parameters/contractId'
         - $ref: '#/components/parameters/Authorization'
@@ -1628,7 +1680,7 @@ paths:
         ### Especificação em OAS 3.0
 
         <a href='swagger/swagger_loans_apis.yaml'>Download da Especificação (OAS 3.0)</a>
-      operationId: getContractsContractIdWarranties
+      operationId: getLoansContractsContractIdWarranties
       parameters:
         - $ref: '#/components/parameters/contractId'
         - $ref: '#/components/parameters/page'
@@ -1704,7 +1756,7 @@ paths:
         ### Especificação em OAS 3.0
 
         <a href='swagger/swagger_loans_apis.yaml'>Download da Especificação (OAS 3.0)</a>
-      operationId: getContractsContractIdPayments
+      operationId: getLoansContractsContractIdPayments
       parameters:
         - $ref: '#/components/parameters/contractId'
         - $ref: '#/components/parameters/page'
@@ -1780,7 +1832,7 @@ paths:
         ### Especificação em OAS 3.0
 
         <a href='swagger/swagger_loans_apis.yaml'>Download da Especificação (OAS 3.0)</a>
-      operationId: getContractsContractIdInstalments
+      operationId: getLoansContractsContractIdInstalments
       parameters:
         - $ref: '#/components/parameters/contractId'
         - $ref: '#/components/parameters/page'
@@ -1856,7 +1908,7 @@ paths:
         ### Especificação em OAS 3.0
 
         <a href='swagger/swagger_financings_apis.yaml'>Download da Especificação (OAS 3.0)</a>
-      operationId: getContracts
+      operationId: getFinancingsContracts
       parameters:
         - $ref: '#/components/parameters/Authorization'
         - $ref: '#/components/parameters/xFapiAuthDate'
@@ -1929,7 +1981,7 @@ paths:
         ### Especificação em OAS 3.0
 
         <a href='swagger/swagger_financings_apis.yaml'>Download da Especificação (OAS 3.0)</a>
-      operationId: getContractsContractId
+      operationId: getFinancingsContractsContractId
       parameters:
         - $ref: '#/components/parameters/contractId'
         - $ref: '#/components/parameters/Authorization'
@@ -2003,7 +2055,7 @@ paths:
         ### Especificação em OAS 3.0
 
         <a href='swagger/swagger_financings_apis.yaml'>Download da Especificação (OAS 3.0)</a>
-      operationId: getContractsContractIdWarranties
+      operationId: getFinancingsContractsContractIdWarranties
       parameters:
         - $ref: '#/components/parameters/contractId'
         - $ref: '#/components/parameters/page'
@@ -2079,7 +2131,7 @@ paths:
         ### Especificação em OAS 3.0
 
         <a href='swagger/swagger_financings_apis.yaml'>Download da Especificação (OAS 3.0)</a>
-      operationId: getContractsContractIdPayments
+      operationId: getFinancingsContractsContractIdPayments
       parameters:
         - $ref: '#/components/parameters/contractId'
         - $ref: '#/components/parameters/page'
@@ -2155,7 +2207,7 @@ paths:
         ### Especificação em OAS 3.0
 
         <a href='swagger/swagger_financings_apis.yaml'>Download da Especificação (OAS 3.0)</a>
-      operationId: getContractsContractIdInstalments
+      operationId: getFinancingsContractsContractIdInstalments
       parameters:
         - $ref: '#/components/parameters/contractId'
         - $ref: '#/components/parameters/page'
@@ -2231,7 +2283,7 @@ paths:
         ### Especificação em OAS 3.0
 
         <a href='swagger/swagger_unarranged_accounts_overdraft_apis.yaml'>Download da Especificação (OAS 3.0)</a>
-      operationId: getContracts
+      operationId: getUnarrangedContracts
       parameters:
         - $ref: '#/components/parameters/Authorization'
         - $ref: '#/components/parameters/xFapiAuthDate'
@@ -2304,7 +2356,7 @@ paths:
         ### Especificação em OAS 3.0
 
         <a href='swagger/swagger_unarranged_accounts_overdraft_apis.yaml'>Download da Especificação (OAS 3.0)</a>
-      operationId: getContractsContractId
+      operationId: getUnarrangedContractsContractId
       parameters:
         - $ref: '#/components/parameters/contractId'
         - $ref: '#/components/parameters/Authorization'
@@ -2382,7 +2434,7 @@ paths:
         ### Especificação em OAS 3.0
 
         <a href='swagger/swagger_unarranged_accounts_overdraft_apis.yaml'>Download da Especificação (OAS 3.0)</a>
-      operationId: getContractsContractIdWarranties
+      operationId: getUnarrangedContractsContractIdWarranties
       parameters:
         - $ref: '#/components/parameters/contractId'
         - $ref: '#/components/parameters/page'
@@ -2462,7 +2514,7 @@ paths:
         ### Especificação em OAS 3.0
 
         <a href='swagger/swagger_unarranged_accounts_overdraft_apis.yaml'>Download da Especificação (OAS 3.0)</a>
-      operationId: getContractsContractIdPayments
+      operationId: getUnarrangedContractsContractIdPayments
       parameters:
         - $ref: '#/components/parameters/contractId'
         - $ref: '#/components/parameters/page'
@@ -2542,7 +2594,7 @@ paths:
         ### Especificação em OAS 3.0
 
         <a href='swagger/swagger_unarranged_accounts_overdraft_apis.yaml'>Download da Especificação (OAS 3.0)</a>
-      operationId: getContractsContractIdInstalments
+      operationId: getUnarrangedContractsContractIdInstalments
       parameters:
         - $ref: '#/components/parameters/contractId'
         - $ref: '#/components/parameters/page'
@@ -2622,7 +2674,7 @@ paths:
         ### Especificação em OAS 3.0
 
         <a href='swagger/swagger_invoice_financings_apis.yaml'>Download da Especificação (OAS 3.0)</a>
-      operationId: getContracts
+      operationId: getInvoiceContracts
       parameters:
         - $ref: '#/components/parameters/Authorization'
         - $ref: '#/components/parameters/xFapiAuthDate'
@@ -2695,7 +2747,7 @@ paths:
         ### Especificação em OAS 3.0
 
         <a href='swagger/swagger_invoice_financings_apis.yaml'>Download da Especificação (OAS 3.0)</a>
-      operationId: getContractsContractId
+      operationId: getInvoiceContractsContractId
       parameters:
         - $ref: '#/components/parameters/contractId'
         - $ref: '#/components/parameters/Authorization'
@@ -2769,7 +2821,7 @@ paths:
         ### Especificação em OAS 3.0
 
         <a href='swagger/swagger_invoice_financings_apis.yaml'>Download da Especificação (OAS 3.0)</a>
-      operationId: getContractsContractIdWarranties
+      operationId: getInvoiceContractsContractIdWarranties
       parameters:
         - $ref: '#/components/parameters/contractId'
         - $ref: '#/components/parameters/page'
@@ -2845,7 +2897,7 @@ paths:
         ### Especificação em OAS 3.0
 
         <a href='swagger/swagger_invoice_financings_apis.yaml'>Download da Especificação (OAS 3.0)</a>
-      operationId: getContractsContractIdPayments
+      operationId: getInvoiceContractsContractIdPayments
       parameters:
         - $ref: '#/components/parameters/contractId'
         - $ref: '#/components/parameters/page'
@@ -2921,7 +2973,7 @@ paths:
         ### Especificação em OAS 3.0
 
         <a href='swagger/swagger_invoice_financings_apis.yaml'>Download da Especificação (OAS 3.0)</a>
-      operationId: getContractsContractIdInstalments
+      operationId: getInvoiceContractsContractIdInstalments
       parameters:
         - $ref: '#/components/parameters/contractId'
         - $ref: '#/components/parameters/page'
@@ -3184,6 +3236,67 @@ components:
               description: Tipo do documento de identificação oficial do titular pessoa jurídica.
               example: CNPJ
               pattern: '^[A-Z]{4}$'
+    ResponseResourceList:
+      type: object
+      required:
+        - data
+        - links
+        - meta
+      properties:
+        data:
+          type: array
+          items:
+            type: object
+            required:
+              - resourceId
+              - type
+              - status
+            properties:
+              resourceId:
+                type: string
+                description: Identifica o recurso reportado pelo participante do Open Banking
+                maxLength: 38
+                pattern: '^[{(]?[0-9A-F]{8}[-]?(?:[0-9A-F]{4}[-]?){3}[0-9A-F]{12}[)}]?$'
+              type:
+                type: string
+                enum:
+                  - ACCOUNT
+                  - CREDIT_CARD_ACCOUNT
+                  - LOAN
+                  - FINANCING
+                  - UNARRANGED_ACCOUNT_OVERDRAFT
+                  - INVOICE_FINANCING
+                description: |
+                  Tipo de recurso (vide Enum):
+                  Account - Conta
+                  Credit Card Account - Conta de Cartão de Crédito
+                  Loan - Empréstimo
+                  Financing - Financiamento
+                  Unarranged Account Overdraft - Cheque Especial
+                  Invoice Financing - Financiamento de Fatura
+                example: ACCOUNT
+              status:
+                type: string
+                enum:
+                  - AVAILABLE
+                  - UNAVAILABLE
+                  - TEMPORARY_UNAVAILABLE
+                  - PENDING_AUTHORISATION
+                description: |
+                  Tipo de status de recurso (vide Enum):
+                  Available - Disponível
+                  Unavailable - Indisponível
+                  Temporary Unavailable - Temporariamente Indisponível
+                  Pending Authorisation - Pendente de Autorização
+                example: AVAILABLE
+            additionalProperties: false
+          minItems: 1
+          description: Lista de recursos e seus respectivos status
+        links:
+          $ref: '#/components/schemas/Links'
+        meta:
+          $ref: '#/components/schemas/Meta'
+      additionalProperties: false
     AccountBalancesData:
       type: object
       description: |
@@ -9439,14 +9552,11 @@ components:
       description: Consentimento criado com sucesso.
       headers:
         x-fapi-interaction-id:
-          description: |
-            Um UID [RFC4122](https://tools.ietf.org/html/rfc4122) usado como um ID de correlação.  
-            Se fornecido, o transmissor deve "reproduzir" esse valor no cabeçalho de resposta.          
           schema:
             type: string
             pattern: '^[a-zA-Z0-9][a-zA-Z0-9\-]{0,99}$'
-            minLength: 1
             maxLength: 100
+            description: 'Um UID [RFC4122](https://tools.ietf.org/html/rfc4122) usado como um ID de correlação. Se fornecido, o transmissor deve "reproduzir" esse valor no cabeçalho de resposta.'
       content:
         application/json:
           schema:
@@ -9455,14 +9565,8 @@ components:
       description: Consentimento consultado com sucesso.
       headers:
         x-fapi-interaction-id:
-          description: |
-            Um UID [RFC4122](https://tools.ietf.org/html/rfc4122) usado como um ID de correlação.  
-            Se fornecido, o transmissor deve "reproduzir" esse valor no cabeçalho de resposta.          
           schema:
-            type: string
-            pattern: '^[a-zA-Z0-9][a-zA-Z0-9\-]{0,99}$'
-            minLength: 1
-            maxLength: 100
+            $ref: '#/components/responses/201ConsentsCreated/headers/x-fapi-interaction-id/schema'
       content:
         application/json:
           schema:
@@ -9471,14 +9575,18 @@ components:
       description: Consentimento revogado com sucesso.
       headers:
         x-fapi-interaction-id:
-          description: |
-            Um UID [RFC4122](https://tools.ietf.org/html/rfc4122) usado como um ID de correlação.  
-            Se fornecido, o transmissor deve "reproduzir" esse valor no cabeçalho de resposta.          
           schema:
-            type: string
-            pattern: '^[a-zA-Z0-9][a-zA-Z0-9\-]{0,99}$'
-            minLength: 1
-            maxLength: 100
+            $ref: '#/components/responses/201ConsentsCreated/headers/x-fapi-interaction-id/schema'
+    OKResponseResourceList:
+      description: Dados de status dos recursos obtidos com sucesso.
+      headers:
+        x-fapi-interaction-id:
+          schema:
+            $ref: '#/components/responses/201ConsentsCreated/headers/x-fapi-interaction-id/schema'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ResponseResourceList'
     OKResponsePersonalCustomersIdentification:
       description: Dados sobre identificação pessoa física.
       content:

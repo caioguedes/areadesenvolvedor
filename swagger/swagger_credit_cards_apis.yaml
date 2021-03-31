@@ -302,56 +302,6 @@ paths:
             - credit-card-accounts
 components:
   schemas:
-    AccountsLimits:
-      type: object
-      description: Conjunto de informações referentes aos limites da conta de  pagamento pós-paga.
-      required:
-        - creditLineLimitType
-        - consolidationType
-        - limitType
-        - limitAmount
-        - avaiableAmount
-        - usedAmount
-      properties:
-        creditLineLimitType:
-          $ref: '#/components/schemas/EnumCreditCardAccountsLineLimitType'
-        consolidationType:
-          $ref: '#/components/schemas/EnumCreditCardAccountsConsolidationType'
-        lineName:
-          $ref: '#/components/schemas/EnumCreditCardAccountsLineName'
-        lineNameAdditionalInfo:
-          type: string
-          pattern: \w*\W*
-          description: Campo de preenchimento obrigatório se selecionada a opção 'OUTRAS' em lineName
-        limitType:
-          $ref: '#/components/schemas/EnumCreditCardAccountsLimitType'
-        limitAmount:
-          type: number
-          nullable: true
-          description: Valor total do limite informado Expresso em valor monetário com 4 casas decimais
-          maxLength: 19
-          example: 2000
-        avaiableAmount:
-          type: number
-          nullable: true
-          description: Valor disponível do limite informado.  Expresso em valor monetário com 4 casas decimais
-          maxLength: 19
-          example: 2000
-        usedAmount:
-          type: number
-          nullable: true
-          description: Valor utilizado do limite informado Expresso em valor monetário com 4 casas decimais
-          maxLength: 19
-          example: 2000
-      example:
-        creditLineLimitType: LIMITE_CREDITO_MODALIDADE_OPERACAO
-        consolidationType: INDIVIDUAL
-        lineName: SAQUE_CREDITO_BRASIL
-        limitType: COM_LIMITE
-        limitAmount: 1000
-        avaiableAmount: 600
-        usedAmount: 400
-      additionalProperties: false
     CreditCardAccountsBillsData:
       type: object
       description: Conjunto das informações referentes a fatura associada à conta de pagamento pós-paga
