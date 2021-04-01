@@ -886,7 +886,7 @@ components:
           type: number
           maxLength: 6
           description: Prazo Remanescente em dias do contrato referente à Modalidade de Crédito informada
-          example: 57
+          example: 14600
         dueInstalments:
           type: number
           maxLength: 3
