@@ -7046,32 +7046,19 @@ components:
     LoansChargeOverParcel:
       type: object
       required:
-        - feeName
-        - feeCode
-        - feePaidDate
-        - feeAmount
+        - chargeType
+        - chargeAdditionalInfo
+        - chargeAmount
       properties:
-        feeName:
+        chargeType:
+          $ref: '#/components/schemas/EnumContractFinanceChargeType'
+        chargeAdditionalInfo:
           type: string
-          description: Denominação da Tarifa avulsa paga fora da parcela
-          maxLength: 250
+          description: Campo de preenchimento obrigatório se selecionada a opção 'OUTROS' em Tipo de encargo pago fora da parcela
           pattern: \w*\W*
-          example: Reavaliação Periódica do Bem
-        feeCode:
-          type: string
-          description: Sigla identificadora da tarifa avulsa fora da parcela
           maxLength: 140
-          pattern: \w*\W*
-          example: avaliação do bem
-        feePaidDate:
-          description: Data efetiva do pagamento da tarifa  conforme especificação RFC-3339. p.ex. 2014-03-19
-          type: string
-          maxLength: 10
-          format: date
-          pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
-          example: '2021-05-21'
-        feeAmount:
-          description: Traz o valor do pagamento da tarifa avulsa fora da parcela. Expresso em valor monetário com 4 casas decimais
+        chargeAmount:
+          description: Valor do pagamento do encargo pago fora da parcela. Expresso em valor monetário com até 4 casas decimais.
           type: number
           format: double
           pattern: '(-?\d{15}(.\d{4}?))$'
@@ -7393,23 +7380,14 @@ components:
       description: Conjunto de informações referentes aos pagamentos realizados de uma operação de crédito de empréstimos.
       required:
         - paidInstalments
-        - currency
         - contractOutstandingBalance
         - releases
-        - chargesOverParcel
-        - taxesOverParcel
       properties:
         paidInstalments:
           type: number
           maxLength: 3
           description: Quantidade total de parcelas pagas do contrato referente à Modalidade de Crédito informada
           example: 73
-        currency:
-          type: string
-          pattern: '^(\w{3}){1}$'
-          maxLength: 3
-          description: 'Moeda referente ao valor monetário informado, segundo modelo ISO-4217. p.ex. ''BRL''. Todos os valores monetários informados estão representados com a moeda vigente do Brasil'
-          example: BRL
         contractOutstandingBalance:
           description: 'Saldo devedor Remanescente, divulgado nos canais eletrônicos, do contrato referente à Modalidade de Crédito informada. Expresso em valor monetário com 4 casas decimais'
           type: number
@@ -7423,31 +7401,28 @@ components:
           description: Lista dos pagamentos realizados no período
           items:
             $ref: '#/components/schemas/LoansReleases'
-        chargesOverParcel:
-          type: array
-          description: 'Lista das tarifas que foram pagas fora da parcela, só para pagamento avulso.'
-          items:
-            $ref: '#/components/schemas/LoansChargeOverParcel'
-        taxesOverParcel:
-          type: array
-          description: Lista dos encargos que foram pagos fora da parcela
-          items:
-            $ref: '#/components/schemas/LoansTaxesOverParcel'
       additionalProperties: false
     LoansReleases:
       type: object
       description: Lista dos pagamentos realizados no período
       required:
         - paymentId
+        - isOverParcelPayment
         - instalmentId
         - paidDate
+        - currency
         - paidAmount
+        - overParcel
       properties:
         paymentId:
           type: string
           description: Identificador de pagamento de responsabilidade de cada Instituição transmissora.
           maxLength: 100
           example: Parcela regular
+        isOverParcelPayment:
+          type: boolean
+          description: Identifica se é um pagamento pactuado ou avulso.
+          example: true
         instalmentId:
           type: string
           description: 'Identificador de parcela, de responsabilidade de cada Instituição transmissora.'
@@ -7460,6 +7435,12 @@ components:
           format: date
           pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
           example: '2021-05-21'
+        currency:
+          type: string
+          pattern: '^(\w{3}){1}$'
+          maxLength: 3
+          description: 'Moeda referente ao valor monetário informado, segundo modelo ISO-4217. p.ex. ''BRL''. Todos os valores monetários informados estão representados com a moeda vigente do Brasil'
+          example: BRL
         paidAmount:
           description: Valor do pagamento referente ao  contrato da modalidade de crédito consultada. Expresso em valor monetário com até 4 casas decimais
           type: number
@@ -7468,30 +7449,47 @@ components:
           maxLength: 19
           minLength: 0
           example: 100000.04
+        overParcel:
+          type: object
+          description: Objeto das tarifas e encargos que foram pagos fora da parcela.
+          required:
+            - fee
+            - charge
+          properties:
+            fee:
+              type: array
+              description: 'Lista das tarifas que foram pagas fora da parcela, só para pagamento avulso.'
+              items:
+                $ref: '#/components/schemas/LoansFeeOverParcel'
+            charge:
+              type: array
+              description: Lista dos encargos que foram pagos fora da parcela
+              items:
+                $ref: '#/components/schemas/LoansChargeOverParcel'
+          additionalProperties: false
       additionalProperties: false
-    LoansTaxesOverParcel:
+    LoansFeeOverParcel:
       type: object
       required:
-        - taxType
-        - taxpaidDate
-        - taxAmount
+        - feeName
+        - feeCode
+        - feeAmount
       properties:
-        taxType:
-          $ref: '#/components/schemas/EnumTaxType'
-        taxAdditionalInfo:
+        feeName:
           type: string
-          description: Campo de preenchimento obrigatório se selecionada a opção 'OUTROS' em Tipo de encargo pago fora da parcela
-          pattern: \w*\W*
           maxLength: 140
-        taxpaidDate:
-          description: 'Data efetiva  do pagamento do encargo pago fora da parcela, conforme especificação RFC-3339. p.ex. 2014-03-19'
+          pattern: \w*\W*
+          description: Denominação da Tarifa pactuada
+          example: Reavaliação periódica do bem
+        feeCode:
           type: string
-          maxLength: 10
-          format: date
-          pattern: '^(\d{4})-(1[0-2]|0?[1-9])-(3[01]|[12][0-9]|0?[1-9])$'
-          example: '2021-05-21'
-        taxAmount:
-          description: Valor do pagamento do encargo pago fora da parcela. Expresso em valor monetário com até 4 casas decimais.
+          maxLength: 140
+          pattern: \w*\W*
+          description: Sigla identificadora da tarifa pactuada
+          example: aval_bem
+        feeAmount:
+          description: |
+            Valor monetário da tarifa pactuada no contrato. Preenchimento obrigatório quando a forma de cobrança for: Mínimo, Máximo ou Fixo
           type: number
           format: double
           pattern: '(-?\d{15}(.\d{4}?))$'
