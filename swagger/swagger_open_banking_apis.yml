@@ -40,6 +40,10 @@ paths:
       summary: Criar novo pedido de consentimento.
       description: |
         Método para a criação de um novo consentimento.
+
+        ### Especificação em OAS 3.0
+
+        <a href="swagger/swagger_consents_apis.yaml">Download da Especificação (OAS 3.0)</a>
       operationId: postCreateConsents
       parameters:
         - $ref: '#/components/parameters/Authorization'
@@ -81,6 +85,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ResponseError'
+      security:
+        - OAuth2Security:
+            - consents
   '/consents/{consentId}':
     get:
       tags:
@@ -88,6 +95,10 @@ paths:
       summary: Obter detalhes do consentimento identificado por consentId.
       description: |
         Método para obter detalhes do consentimento identificado por consentId.
+
+        ### Especificação em OAS 3.0
+
+        <a href="swagger/swagger_consents_apis.yaml">Download da Especificação (OAS 3.0)</a>
       operationId: getConsentsConsentId
       parameters:
         - $ref: '#/components/parameters/consentId'
@@ -121,12 +132,19 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ResponseError'
+      security:
+        - OAuth2Security:
+            - consents
     delete:
       tags:
         - API - Consentimento
       summary: Deletar/revogar o consentimento identificado por consentId.
       description: |
         Método para deletar/revogar o consentimento identificado por consentId.
+
+        ### Especificação em OAS 3.0
+
+        <a href="swagger/swagger_consents_apis.yaml">Download da Especificação (OAS 3.0)</a>
       operationId: deleteConsentsConsentId
       parameters:
         - $ref: '#/components/parameters/consentId'
@@ -207,6 +225,10 @@ paths:
           $ref: '#/components/responses/InternalServerError'
         default:
           $ref: '#/components/responses/OKResponseResourceList'
+      security:
+        - OpenId:
+            - openId
+            - resources
   /customers/v1/personal/identifications:
     get:
       tags:
@@ -1090,6 +1112,10 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/InternalServerError'
+      security:
+        - OpenId:
+            - openId
+            - credit-card
   /accounts/v1/accounts:
     get:
       tags:
