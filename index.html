@@ -4299,7 +4299,84 @@ License: <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache 2.0</a></p
 
 <p><code>GET /metrics</code></p>
 
-<p>Obtém as métricas de disponibilidade das APIs</p>
+<table><thead>
+<tr>
+<th>Versão</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>1</td>
+</tr>
+</tbody></table>
+
+<h3 id='visao-geral'>Visão geral</h3>
+
+<p>Este <em>endpoint</em> possibilita ao diretório consultar estatísticas operacionais das APIs disponibilizadas pelas instituições financeiras, a fim de avaliar a qualidade dos serviços fornecidos ao usuário final.</p>
+
+<h3 id='parametros-de-entrada'>Parâmetros de entrada</h3>
+
+<table><thead>
+<tr>
+<th style="text-align: left">Nome</th>
+<th style="text-align: left">Origem</th>
+<th style="text-align: left">Tipo</th>
+<th style="text-align: left">Obrigatório</th>
+<th style="text-align: left">Descrição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">period</td>
+<td style="text-align: left">query</td>
+<td style="text-align: left"><a href="#schemaEnumAdminMetricsPeriod">Enum AdminMetricsPeriod</a></td>
+<td style="text-align: left">Não</td>
+<td style="text-align: left">O período a ser retornado. Se não for informado, o padrão será ALL</td>
+</tr>
+</tbody></table>
+
+<h3 id='enum-adminmetricsperiod'>Enum AdminMetricsPeriod</h3>
+
+<p><a id="schemaEnumAdminMetricsPeriod"></a></p>
+
+<table><thead>
+<tr>
+<th style="text-align: left">Propriedade</th>
+<th style="text-align: left">Código</th>
+<th style="text-align: left">Definição</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">period</td>
+<td style="text-align: left">CURRENT</td>
+<td style="text-align: left">Métricas do dia atual.</td>
+</tr>
+<tr>
+<td style="text-align: left">period</td>
+<td style="text-align: left">ALL</td>
+<td style="text-align: left">Métricas de todo o período disponível.</td>
+</tr>
+</tbody></table>
+
+<h3 id='resposta'>Resposta</h3>
+
+<table><thead>
+<tr>
+<th style="text-align: left">Status</th>
+<th style="text-align: left">Significado</th>
+<th style="text-align: left">Descrição</th>
+<th style="text-align: left">Schema</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">200</td>
+<td style="text-align: left">OK</td>
+<td style="text-align: left">Sucesso</td>
+<td style="text-align: left"><a href="#schemaResponseMetricsList">ResponseMetricsList</a></td>
+</tr>
+</tbody></table>
+
+<h3 id='especificacao-em-oas-3-0'>Especificação em OAS 3.0</h3>
+
+<p><a href='swagger/swagger_admin_apis.yaml'>Download da Especificação (OAS 3.0)</a></p>
 
 <h3 id="obtém-as-métricas-de-disponibilidade-das-apis-parameters">Parâmetros</h3>
 
@@ -4539,7 +4616,54 @@ This operation does not require authentication
 
 <p><code>GET /status</code></p>
 
-<p>Obtém a descrição referente ao código de status retornado pelas APIs.</p>
+<table><thead>
+<tr>
+<th>Versão</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>1</td>
+</tr>
+</tbody></table>
+
+<h3 id='visao-geral-2'>Visão geral</h3>
+
+<p>Obtêm a lista de indisponibilidade agendada para os serviços.</p>
+
+<h3 id='parametros'>Parâmetros</h3>
+
+<table><thead>
+<tr>
+<th>Nome</th>
+<th>Origem</th>
+<th>Tipo</th>
+<th>Obrigatório</th>
+<th>Descrição</th>
+</tr>
+</thead><tbody>
+</tbody></table>
+
+<h3 id='resposta-2'>Resposta</h3>
+
+<table><thead>
+<tr>
+<th style="text-align: left">Status</th>
+<th style="text-align: left">Significado</th>
+<th style="text-align: left">Descrição</th>
+<th style="text-align: left">Schema</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">200</td>
+<td style="text-align: left">OK</td>
+<td style="text-align: left">Sucesso</td>
+<td style="text-align: left"><a href="#schemaResponseDiscoveryOutagesList">ResponseDiscoveryOutagesList</a></td>
+</tr>
+</tbody></table>
+
+<h3 id='especificacao-em-oas-3-0-2'>Especificação em OAS 3.0</h3>
+
+<p><a href='swagger/swagger_common_apis.yaml'>Download da Especificação (OAS 3.0)</a></p>
 
 <h3 id="obtém-a-descrição-referente-ao-código-de-status-retornado-pelas-apis.-parameters">Parâmetros</h3>
 
@@ -4667,7 +4791,41 @@ This operation does not require authentication
 
 <p><code>GET /outages</code></p>
 
-<p>Obtêm a lista de indisponibilidade agendada para os serviços.</p>
+<table><thead>
+<tr>
+<th>Versão</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>1</td>
+</tr>
+</tbody></table>
+
+<h3 id='visao-geral-3'>Visão geral</h3>
+
+<p>Obtém a descrição referente ao código de status retornado pelas APIs.</p>
+
+<h3 id='resposta-3'>Resposta</h3>
+
+<table><thead>
+<tr>
+<th style="text-align: left">Status</th>
+<th style="text-align: left">Significado</th>
+<th style="text-align: left">Descrição</th>
+<th style="text-align: left">Schema</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">200</td>
+<td style="text-align: left">OK</td>
+<td style="text-align: left">Sucesso</td>
+<td style="text-align: left"><a href="#schemaResponseDiscoveryStatusList">ResponseDiscoveryStatusList</a></td>
+</tr>
+</tbody></table>
+
+<h3 id='especificacao-em-oas-3-0-3'>Especificação em OAS 3.0</h3>
+
+<p><a href='swagger/swagger_common_apis.yaml'>Download da Especificação (OAS 3.0)</a></p>
 
 <h3 id="obtêm-a-lista-de-indisponibilidade-agendada-para-os-serviços.-parameters">Parâmetros</h3>
 
@@ -4791,7 +4949,51 @@ This operation does not require authentication
 
 <p><code>GET /banking-agents</code></p>
 
-<p>Método para obter a lista de correspondentes bancários da instituição financeira.</p>
+<table><thead>
+<tr>
+<th>Versão</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>1</td>
+</tr>
+</tbody></table>
+
+<h3 id='visao-geral-4'>Visão geral</h3>
+
+<p>Obtém a lista de Correspondentes bancários.</p>
+
+<p>Tags: <a href="#glossarioCorrespondenteBancario">Correspondente bancário (Banking Agent)</a>, <a href="#glossarioCNPJ">CNPJ (CNPJ Number)</a>, <a href="#glossarioMarca">Marca (Brand)</a> e <a href="#glossarioInstituicaoFinanceira">Instituição Financeira (Company)</a>.</p>
+
+<h3 id='visao-de-alto-de-nivel-das-estruturas-de-dados'>Visão de alto de nível das estruturas de dados</h3>
+
+<p><img class='lazy' src='images/loading-e35b35a4.gif' data-src='images/tld/TLD_Banking_Agents_v1-43e08403.png'/></p>
+
+<h3 id='dicionario-de-dados'>Dicionário de dados</h3>
+
+<p><a href='dictionary/banking_agents.csv' target="_blank">Fazer download do dicionário de dados</a></p>
+
+<h3 id='resposta-4'>Resposta</h3>
+
+<table><thead>
+<tr>
+<th style="text-align: left">Status</th>
+<th style="text-align: left">Significado</th>
+<th style="text-align: left">Descrição</th>
+<th style="text-align: left">Schema</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">200</td>
+<td style="text-align: left">OK</td>
+<td style="text-align: left">Sucesso</td>
+<td style="text-align: left"><a href="#schemaResponseBankingAgentsList">ResponseBankingAgentsList</a></td>
+</tr>
+</tbody></table>
+
+<h3 id='especificacao-em-oas-3-0-4'>Especificação em OAS 3.0</h3>
+
+<p><a href='swagger/swagger_channels_apis.yaml'>Download da Especificação (OAS 3.0)</a></p>
 
 <h3 id="obtém-a-lista-de-correspondentes-bancários-da-instituição-financeira.-parameters">Parâmetros</h3>
 
@@ -5117,7 +5319,53 @@ This operation does not require authentication
 
 <p><code>GET /branches</code></p>
 
-<p>Método para obter a lista de dependências próprias da instituição financeira.</p>
+<table><thead>
+<tr>
+<th>Versão</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>1</td>
+</tr>
+</tbody></table>
+
+<h3 id='visao-geral-5'>Visão geral</h3>
+
+<p>Obtém a lista de dependências próprias da instituição financeira.</p>
+
+<p>Dependência própria é o espaço físico destinado ao atendimento ao público.</p>
+
+<p>Tags: <a href="#glossarioAgencia">Agência (Branch)</a>, <a href="#glossarioCNPJ">CNPJ (CNPJ Number)</a>, <a href="#glossarioMarca">Marca (Brand)</a>, <a href="#glossarioDependencia">Dependência (Branch)</a>, <a href="#glossarioInstituicaoFinanceira">Instituição Financeira (Company)</a>, <a href="#glossarioPostoAtendimentoBancario">Posto de Atendimento Bancário - PAB (Branch)</a>, <a href="#glossarioPostoAtendimentoEletronico">Posto de Atendimento Eletrônico – PAE (Branch)</a> e <a href="#glossarioUnidadeAdministrativaDesmembrada">Unidade Administrativa Desmembrada – UAD (Branch)</a>.</p>
+
+<h3 id='visao-de-alto-de-nivel-das-estruturas-de-dados-2'>Visão de alto de nível das estruturas de dados</h3>
+
+<p><img class='lazy' src='images/loading-e35b35a4.gif' data-src='images/tld/TLD_Branches_v1-e38ebd74.png'/></p>
+
+<h3 id='dicionario-de-dados-2'>Dicionário de dados</h3>
+
+<p><a href='dictionary/branches.csv' target="_blank">Fazer download do dicionário de dados</a></p>
+
+<h3 id='resposta-5'>Resposta</h3>
+
+<table><thead>
+<tr>
+<th style="text-align: left">Status</th>
+<th style="text-align: left">Significado</th>
+<th style="text-align: left">Descrição</th>
+<th style="text-align: left">Schema</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">200</td>
+<td style="text-align: left">OK</td>
+<td style="text-align: left">Sucesso</td>
+<td style="text-align: left"><a href="#schemaResponseBranchesList">ResponseBranchesList</a></td>
+</tr>
+</tbody></table>
+
+<h3 id='especificacao-em-oas-3-0-5'>Especificação em OAS 3.0</h3>
+
+<p><a href='swagger/swagger_channels_apis.yaml'>Download da Especificação (OAS 3.0)</a></p>
 
 <h3 id="obtém-a-lista-de-dependências-próprias-da-instituição-financeira.-parameters">Parâmetros</h3>
 
@@ -5326,7 +5574,53 @@ This operation does not require authentication
 
 <p><code>GET /electronic-channels</code></p>
 
-<p>Método para obter a lista de canais eletrônicos de atendimento da instituição financeira.</p>
+<table><thead>
+<tr>
+<th>Versão</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>1</td>
+</tr>
+</tbody></table>
+
+<h3 id='visao-geral-6'>Visão geral</h3>
+
+<p>Obtém a lista de canais eletrônicos próprios da instituição financeira.</p>
+
+<p>Esse <em>endpoint</em> retorna os possíveis canais de atendimento eletrônico, bem como suas informações, serviços prestados e formas de acesso.</p>
+
+<p>Tags: <a href="#glossarioCNPJ">CNPJ (CNPJ Number)</a>, <a href="#glossarioMarca">Marca (Brand)</a> e <a href="#glossarioInstituicaoFinanceira">Instituição Financeira (Company)</a>.</p>
+
+<h3 id='visao-de-alto-nivel-das-estruturas-de-dados'>Visão de alto nível das estruturas de dados</h3>
+
+<p><img class='lazy' src='images/loading-e35b35a4.gif' data-src='images/tld/TLD_ElectronicChannels_v1-e494dd91.png'/></p>
+
+<h3 id='dicionario-de-dados-3'>Dicionário de dados</h3>
+
+<p><a href='dictionary/electronic_channels.csv' target="_blank">Fazer download do dicionário de dados</a></p>
+
+<h3 id='resposta-6'>Resposta</h3>
+
+<table><thead>
+<tr>
+<th style="text-align: left">Status</th>
+<th style="text-align: left">Significado</th>
+<th style="text-align: left">Descrição</th>
+<th style="text-align: left">Schema</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">200</td>
+<td style="text-align: left">OK</td>
+<td style="text-align: left">Sucesso</td>
+<td style="text-align: left"><a href="#schemaResponseElectronicChannelsList">ResponseElectronicChannelsList</a></td>
+</tr>
+</tbody></table>
+
+<h3 id='especificacao-em-oas-3-0-6'>Especificação em OAS 3.0</h3>
+
+<p><a href='swagger/swagger_channels_apis.yaml'>Download da Especificação (OAS 3.0)</a></p>
 
 <h3 id="obtém-a-lista-de-canais-eletrônicos-de-atendimento-da-instituição-financeira.-parameters">Parâmetros</h3>
 
@@ -5475,7 +5769,53 @@ This operation does not require authentication
 
 <p><code>GET /phone-channels</code></p>
 
-<p>Método para obter a lista de canais telefônicos de atendimento da instituição financeira.</p>
+<table><thead>
+<tr>
+<th>Versão</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>1</td>
+</tr>
+</tbody></table>
+
+<h3 id='visao-geral-7'>Visão geral</h3>
+
+<p>Obtém a lista de canais telefônicos próprios da instituição financeira.</p>
+
+<p>Esse <em>endpoint</em> retorna os possíveis canais de atendimento telefônico bem como suas informações, serviços prestados e formas de acesso.</p>
+
+<p>Tags: <a href="#glossarioCNPJ">CNPJ (CNPJ Number)</a>, <a href="#glossarioMarca">Marca (Brand)</a> e <a href="#glossarioInstituicaoFinanceira">Instituição Financeira (Company)</a>.</p>
+
+<h3 id='visao-de-alto-nivel-das-estruturas-de-dados-2'>Visão de alto nível das estruturas de dados</h3>
+
+<p><img class='lazy' src='images/loading-e35b35a4.gif' data-src='images/tld/TLD_PhoneChannels_v1-c35539ed.png'/></p>
+
+<h3 id='dicionario-de-dados-4'>Dicionário de dados</h3>
+
+<p><a href='dictionary/phone_channels.csv' target="_blank">Fazer download do dicionário de dados</a></p>
+
+<h3 id='resposta-7'>Resposta</h3>
+
+<table><thead>
+<tr>
+<th style="text-align: left">Status</th>
+<th style="text-align: left">Significado</th>
+<th style="text-align: left">Descrição</th>
+<th style="text-align: left">Schema</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">200</td>
+<td style="text-align: left">OK</td>
+<td style="text-align: left">Sucesso</td>
+<td style="text-align: left"><a href="#schemaResponsePhoneChannelsList">ResponsePhoneChannelsList</a></td>
+</tr>
+</tbody></table>
+
+<h3 id='especificacao-em-oas-3-0-7'>Especificação em OAS 3.0</h3>
+
+<p><a href='swagger/swagger_channels_apis.yaml'>Download da Especificação (OAS 3.0)</a></p>
 
 <h3 id="obtém-a-lista-de-canais-telefônicos-de-atendimento-da-instituição-financeira.-parameters">Parâmetros</h3>
 
@@ -5738,7 +6078,51 @@ This operation does not require authentication
 
 <p><code>GET /shared-automated-teller-machines</code></p>
 
-<p>Método para obter a lista de terminais compartilhados de autoatendimento da instituição financeira.</p>
+<table><thead>
+<tr>
+<th>Versão</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>1</td>
+</tr>
+</tbody></table>
+
+<h3 id='visao-geral-8'>Visão geral</h3>
+
+<p>Obtém a lista de terminais compartilhados de autoatendimento da instituição financeira.</p>
+
+<p>Tags: <a href="#glossarioCNPJ">CNPJ (CNPJ Number)</a>, <a href="#glossarioMarca">Marca (Brand)</a>, <a href="#glossarioInstituicaoFinanceira">Instituição Financeira (Company)</a>, <a href="#glossarioTerminaisAutoAtendimentoCompartilhados">Terminais de Autoatendimento Compartilhados (Shared Automatic Teller Machine)</a>.</p>
+
+<h3 id='visao-de-alto-de-nivel-das-estruturas-de-dados-3'>Visão de alto de nível das estruturas de dados</h3>
+
+<p><img class='lazy' src='images/loading-e35b35a4.gif' data-src='images/tld/TLD_Shared_Automated_Teller_Machines_v1-8ce1084b.png'/></p>
+
+<h3 id='dicionario-de-dados-5'>Dicionário de dados</h3>
+
+<p><a href='dictionary/automated_teller_machines.csv' target="_blank">Fazer download do dicionário de dados</a></p>
+
+<h3 id='resposta-8'>Resposta</h3>
+
+<table><thead>
+<tr>
+<th style="text-align: left">Status</th>
+<th style="text-align: left">Significado</th>
+<th style="text-align: left">Descrição</th>
+<th style="text-align: left">Schema</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">200</td>
+<td style="text-align: left">OK</td>
+<td style="text-align: left">Sucesso</td>
+<td style="text-align: left"><a href="#schemaResponseSharedAutomatedTellerMachinesList">ResponseSharedAutomatedTellerMachinesList</a></td>
+</tr>
+</tbody></table>
+
+<h3 id='especificacao-em-oas-3-0-8'>Especificação em OAS 3.0</h3>
+
+<p><a href='swagger/swagger_channels_apis.yaml'>Download da Especificação (OAS 3.0)</a></p>
 
 <h3 id="obtém-a-lista-de-terminais-compartilhados-de-autoatendimento.-parameters">Parâmetros</h3>
 
@@ -5906,7 +6290,53 @@ This operation does not require authentication
 
 <p><code>GET /personal-accounts</code></p>
 
-<p>Obtém dados das contas</p>
+<table><thead>
+<tr>
+<th>Versão</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>1</td>
+</tr>
+</tbody></table>
+
+<h3 id='visao-geral-9'>Visão geral</h3>
+
+<p>Obtém os dados da Conta pessoa natural.</p>
+
+<p>Esta especificação inclui todos os artefatos relevantes para a Especificação de API sobre  Contas de depósito à vista, poupança e de pagamento pré-paga pessoa natural de dados abertos.</p>
+
+<p>Tags: <a href="#glossarioMarca">Marca (Brand)</a>, <a href="#glossarioCNPJ">CNPJ (CNPJ Number)</a>, <a href="#glossarioContaDepositoVista">Conta de depósito à vista (Account)</a>, <a href="#glossarioContaPagamentoPrePaga">Conta de pagamento pré-paga (Prepaid Payment Account)</a>, <a href="#glossarioContaPoupanca">Conta de Poupança (Saving Account)</a>, <a href="#glossarioInstituicaoFinanceira">Instituição Financeira (Company)</a>, <a href="#glossarioPacoteServicos">Pacote de Serviços (Service Bundles)</a>, <a href="#glossarioTaxaReferencial">Taxa Referencial – TR (Referential Rate)</a> e <a href="#api-canais-de-atendimento-divulgacao-dos-valores-de-tarifas-e-taxas-de-juros-remuneratorias">Divulgação dos valores de tarifas e taxas de juros remuneratórias (Disclosure of Fees and Interest Rates)</a>.</p>
+
+<h3 id='visao-de-alto-de-nivel-das-estruturas-de-dados-4'>Visão de alto de nível das estruturas de dados</h3>
+
+<p><img class='lazy' src='images/loading-e35b35a4.gif' data-src='images/tld/TLD_Personal_Accounts_v1-fb5ed853.png'/></p>
+
+<h3 id='dicionario-de-dados-6'>Dicionário de dados</h3>
+
+<p><a href='dictionary/personal_accounts.csv' target="_blank">Fazer download do dicionário de dados</a></p>
+
+<h3 id='resposta-9'>Resposta</h3>
+
+<table><thead>
+<tr>
+<th style="text-align: left">Status</th>
+<th style="text-align: left">Significado</th>
+<th style="text-align: left">Descrição</th>
+<th style="text-align: left">Schema</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">200</td>
+<td style="text-align: left">OK</td>
+<td style="text-align: left">Sucesso</td>
+<td style="text-align: left"><a href="#schemaResponsePersonalAccounts">ResponsePersonalAccounts</a></td>
+</tr>
+</tbody></table>
+
+<h3 id='especificacao-em-oas-3-0-9'>Especificação em OAS 3.0</h3>
+
+<p><a href='swagger/swagger_products_services_apis.yaml'>Download da Especificação (OAS 3.0)</a></p>
 
 <h3 id="obtém-dados-das-contas-pessoa-natural-parameters">Parâmetros</h3>
 
@@ -6100,7 +6530,53 @@ This operation does not require authentication
 
 <p><code>GET /business-accounts</code></p>
 
-<p>Obtém dados das contas pessoa jurídica</p>
+<table><thead>
+<tr>
+<th>Versão</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>1</td>
+</tr>
+</tbody></table>
+
+<h3 id='visao-geral-10'>Visão geral</h3>
+
+<p>Obtém os dados da Conta pessoa jurídica.</p>
+
+<p>Esta especificação inclui todos os artefatos relevantes para a Especificação de API sobre  Contas de depósito à vista, poupança e de pagamento pré-paga para pessoa jurídica de dados abertos.</p>
+
+<p>Tags: <a href="#glossarioMarca">Marca (Brand)</a>, <a href="#glossarioCNPJ">CNPJ (CNPJ Number)</a>, <a href="#glossarioContaDepositoVista">Conta de depósito à vista (Account)</a>, <a href="#glossarioContaPagamentoPrePaga">Conta de pagamento pré-paga (Prepaid Payment Account)</a>, <a href="#glossarioContaPoupanca">Conta de Poupança (Saving Account)</a>, <a href="#glossarioInstituicaoFinanceira">Instituição Financeira (Company)</a>, <a href="#glossarioPacoteServicos">Pacote de Serviços (Service Bundles)</a>, <a href="#glossarioTaxaReferencial">Taxa Referencial – TR (Referential Rate)</a> e <a href="#api-canais-de-atendimento-divulgacao-dos-valores-de-tarifas-e-taxas-de-juros-remuneratorias">Divulgação dos valores de tarifas e taxas de juros remuneratórias (Disclosure of Fees and Interest Rates)</a>.</p>
+
+<h3 id='visao-de-alto-de-nivel-das-estruturas-de-dados-5'>Visão de alto de nível das estruturas de dados</h3>
+
+<p><img class='lazy' src='images/loading-e35b35a4.gif' data-src='images/tld/TLD_Business_Accounts_v1-bd89730c.png'/></p>
+
+<h3 id='dicionario-de-dados-7'>Dicionário de dados</h3>
+
+<p><a href='dictionary/business_accounts.csv' target="_blank">Fazer download do dicionário de dados</a></p>
+
+<h3 id='resposta-10'>Resposta</h3>
+
+<table><thead>
+<tr>
+<th style="text-align: left">Status</th>
+<th style="text-align: left">Significado</th>
+<th style="text-align: left">Descrição</th>
+<th style="text-align: left">Schema</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">200</td>
+<td style="text-align: left">OK</td>
+<td style="text-align: left">Sucesso</td>
+<td style="text-align: left"><a href="#schemaResponseBusinessAccounts">ResponseBusinessAccounts</a></td>
+</tr>
+</tbody></table>
+
+<h3 id='especificacao-em-oas-3-0-10'>Especificação em OAS 3.0</h3>
+
+<p><a href='swagger/swagger_products_services_apis.yaml'>Download da Especificação (OAS 3.0)</a></p>
 
 <h3 id="obtém-dados-das-contas-pessoa-jurídica-parameters">Parâmetros</h3>
 
@@ -6445,7 +6921,53 @@ This operation does not require authentication
 
 <p><code>GET /business-loans</code></p>
 
-<p>Obtém dados sobre empréstimos pessoa jurídica</p>
+<table><thead>
+<tr>
+<th>Versão</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>1</td>
+</tr>
+</tbody></table>
+
+<h3 id='visao-geral-11'>Visão geral</h3>
+
+<p>Obtém os dados de Empréstimos para pessoa natural.</p>
+
+<p>Esta especificação inclui todos os itens relevantes para a Especificação de API de Empréstimos para pessoa natural de dados abertos.</p>
+
+<p>Tags: <a href="#glossarioCNPJ">CNPJ (CNPJ Number)</a>, <a href="#glossarioMarca">Marca (Brand)</a>, <a href="#glossarioCreditoRotativo">Crédito Rotativo (Overdraft)</a>, <a href="#glossarioEmprestimo">Empréstimo (Loan)</a>, <a href="#glossarioInstituicaoFinanceira">Instituição Financeira (Company)</a>, <a href="#glossarioTaxaReferencial">Taxa Referencial – TR (Referential Rate)</a>, <a href="#glossarioIndexador">Indexador (Indexer)</a> e <a href="#api-canais-de-atendimento-divulgacao-dos-valores-de-tarifas-e-taxas-de-juros-remuneratorias">Divulgação dos valores de tarifas e taxas de juros remuneratórias (Disclosure of Fees and Interest Rates)</a>.</p>
+
+<h3 id='visao-de-alto-de-nivel-das-estruturas-de-dados-6'>Visão de alto de nível das estruturas de dados</h3>
+
+<p><img class='lazy' src='images/loading-e35b35a4.gif' data-src='images/tld/TLD_Personal_Loans_v1-360d6969.png'/></p>
+
+<h3 id='dicionario-de-dados-8'>Dicionário de dados</h3>
+
+<p><a href='dictionary/personal_loans.csv' target="_blank">Fazer download do dicionário de dados</a></p>
+
+<h3 id='resposta-11'>Resposta</h3>
+
+<table><thead>
+<tr>
+<th style="text-align: left">Status</th>
+<th style="text-align: left">Significado</th>
+<th style="text-align: left">Descrição</th>
+<th style="text-align: left">Schema</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">200</td>
+<td style="text-align: left">OK</td>
+<td style="text-align: left">Sucesso</td>
+<td style="text-align: left"><a href="#schemaResponsePersonalLoans">ResponsePersonalLoans</a></td>
+</tr>
+</tbody></table>
+
+<h3 id='especificacao-em-oas-3-0-11'>Especificação em OAS 3.0</h3>
+
+<p><a href='swagger/swagger_products_services_apis.yaml'>Download da Especificação (OAS 3.0)</a></p>
 
 <h3 id="obtém-dados-sobre-empréstimos-pessoa-jurídica-parameters">Parâmetros</h3>
 
@@ -6606,7 +7128,51 @@ This operation does not require authentication
 
 <p><code>GET /personal-credit-cards</code></p>
 
-<p>Obtém dados sobre cartões de crédito pessoa natural</p>
+<table><thead>
+<tr>
+<th>Versão</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>1</td>
+</tr>
+</tbody></table>
+
+<h3 id='visao-geral-12'>Visão geral</h3>
+
+<p>Obtém os dados de produtos e serviços de cartões de crédito para pessoa natural.</p>
+
+<p>Tags: <a href="#glossarioMarca">Marca (Brand)</a>,<a href="#glossarioBandeira">Bandeira (Credit Card Network)</a>, <a href="#glossarioCNPJ">CNPJ (CNPJ Number)</a>, <a href="#glossarioInstituicaoFinanceira">Instituição Financeira (Company)</a>, <a href="#glossarioContaPagamentoPosPaga">Conta de pagamento pós-paga (Credit Card)</a>, <a href="#glossarioCreditoRotativo">Crédito Rotativo (Overdraft)</a>, <a href="#glossarioIndexador">Indexador (Indexer)</a> e <a href="#api-canais-de-atendimento-divulgacao-dos-valores-de-tarifas-e-taxas-de-juros-remuneratorias">Divulgação dos valores de tarifas e taxas de juros remuneratórias (Disclosure of Fees and Interest Rates)</a>.</p>
+
+<h3 id='visao-de-alto-nivel-das-estruturas-de-dados-3'>Visão de alto nível das estruturas de dados</h3>
+
+<p><img class='lazy' src='images/loading-e35b35a4.gif' data-src='images/tld/TLD_Personal_Credit_Cards_v1-b6da1fe5.png'/></p>
+
+<h3 id='dicionario-de-dados-9'>Dicionário de dados</h3>
+
+<p><a href='dictionary/personal_credit_cards.csv' target="_blank">Fazer download do dicionário de dados</a></p>
+
+<h3 id='resposta-12'>Resposta</h3>
+
+<table><thead>
+<tr>
+<th style="text-align: left">Status</th>
+<th style="text-align: left">Significado</th>
+<th style="text-align: left">Descrição</th>
+<th style="text-align: left">Schema</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">200</td>
+<td style="text-align: left">OK</td>
+<td style="text-align: left">Sucesso</td>
+<td style="text-align: left"><a href="#schemaResponsePersonalCreditCards">ResponsePersonalCreditCards</a></td>
+</tr>
+</tbody></table>
+
+<h3 id='especificacao-em-oas-3-0-12'>Especificação em OAS 3.0</h3>
+
+<p><a href='swagger/swagger_products_services_apis.yaml'>Download da Especificação (OAS 3.0)</a></p>
 
 <h3 id="obtém-dados-sobre-cartões-de-crédito-pessoa-natural-parameters">Parâmetros</h3>
 
@@ -6795,7 +7361,51 @@ This operation does not require authentication
 
 <p><code>GET /business-credit-cards</code></p>
 
-<p>Obtém dados sobre cartões de crédito pessoa jurídica</p>
+<table><thead>
+<tr>
+<th>Versão</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>1</td>
+</tr>
+</tbody></table>
+
+<h3 id='visao-geral-13'>Visão geral</h3>
+
+<p>Obtém os dados de produtos e serviços de cartões de crédito para pessoa jurídica.</p>
+
+<p>Tags: <a href="#glossarioMarca">Marca (Brand)</a>,<a href="#glossarioBandeira">Bandeira (Credit Card Network)</a>, <a href="#glossarioCNPJ">CNPJ (CNPJ Number)</a>, <a href="#glossarioInstituicaoFinanceira">Instituição Financeira (Company)</a>, <a href="#glossarioContaPagamentoPosPaga">Conta de pagamento pós-paga (Credit Card)</a>, <a href="#glossarioCreditoRotativo">Crédito Rotativo (Overdraft)</a>, <a href="#glossarioIndexador">Indexador (Indexer)</a> e <a href="#api-canais-de-atendimento-divulgacao-dos-valores-de-tarifas-e-taxas-de-juros-remuneratorias">Divulgação dos valores de tarifas e taxas de juros remuneratórias (Disclosure of Fees and Interest Rates)</a>.</p>
+
+<h3 id='visao-de-alto-nivel-das-estruturas-de-dados-4'>Visão de alto nível das estruturas de dados</h3>
+
+<p><img class='lazy' src='images/loading-e35b35a4.gif' data-src='images/tld/TLD_Business_Credit_Cards_v1-55fea9ed.png'/></p>
+
+<h3 id='dicionario-de-dados-10'>Dicionário de dados</h3>
+
+<p><a href='dictionary/business_credit_cards.csv' target="_blank">Fazer download do dicionário de dados</a></p>
+
+<h3 id='resposta-13'>Resposta</h3>
+
+<table><thead>
+<tr>
+<th style="text-align: left">Status</th>
+<th style="text-align: left">Significado</th>
+<th style="text-align: left">Descrição</th>
+<th style="text-align: left">Schema</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">200</td>
+<td style="text-align: left">OK</td>
+<td style="text-align: left">Sucesso</td>
+<td style="text-align: left"><a href="#schemaResponseBusinessCreditCards">ResponseBusinessCreditCards</a></td>
+</tr>
+</tbody></table>
+
+<h3 id='especificacao-em-oas-3-0-13'>Especificação em OAS 3.0</h3>
+
+<p><a href='swagger/swagger_products_services_apis.yaml'>Download da Especificação (OAS 3.0)</a></p>
 
 <h3 id="obtém-dados-sobre-cartões-de-crédito-pessoa-jurídica-parameters">Parâmetros</h3>
 
@@ -6984,7 +7594,53 @@ This operation does not require authentication
 
 <p><code>GET /personal-financings</code></p>
 
-<p>Obtém a lista de Financiamentos de Pessoa Natural</p>
+<table><thead>
+<tr>
+<th>Versão</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>1</td>
+</tr>
+</tbody></table>
+
+<h3 id='visao-geral-14'>Visão geral</h3>
+
+<p>Obtém os dados de Financiamento para pessoa natural.</p>
+
+<p>Esta especificação inclui todos os itens relevantes para a Especificação de API de Financiamentos para pessoa natural de dados abertos.</p>
+
+<p>Tags: <a href="#glossarioCNPJ">CNPJ (CNPJ Number)</a>, <a href="#glossarioMarca">Marca (Brand)</a>, <a href="#glossarioFinanciamento">Financiamento (Financing)</a>, <a href="#glossarioInstituicaoFinanceira">Instituição Financeira (Company)</a>, <a href="#glossarioTaxaReferencial">Taxa Referencial – TR (Referential Rate)</a>, <a href="#glossarioIndexador">Indexador (Indexer)</a> e <a href="#api-canais-de-atendimento-divulgacao-dos-valores-de-tarifas-e-taxas-de-juros-remuneratorias">Divulgação dos valores de tarifas e taxas de juros remuneratórias (Disclosure of Fees and Interest Rates)</a>.</p>
+
+<h3 id='visao-de-alto-nivel-das-estruturas-de-dados-5'>Visão de alto nível das estruturas de dados</h3>
+
+<p><img class='lazy' src='images/loading-e35b35a4.gif' data-src='images/tld/TLD_Personal_Financings_v1-27f3dbf4.png'/></p>
+
+<h3 id='dicionario-de-dados-11'>Dicionário de dados</h3>
+
+<p><a href='dictionary/personal_financings.csv' target="_blank">Fazer download do dicionário de dados</a></p>
+
+<h3 id='resposta-14'>Resposta</h3>
+
+<table><thead>
+<tr>
+<th style="text-align: left">Status</th>
+<th style="text-align: left">Significado</th>
+<th style="text-align: left">Descrição</th>
+<th style="text-align: left">Schema</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">200</td>
+<td style="text-align: left">OK</td>
+<td style="text-align: left">Sucesso</td>
+<td style="text-align: left"><a href="#schemaResponsePersonalFinancings">ResponsePersonalFinancings</a></td>
+</tr>
+</tbody></table>
+
+<h3 id='especificacao-em-oas-3-0-14'>Especificação em OAS 3.0</h3>
+
+<p><a href='swagger/swagger_products_services_apis.yaml'>Download da Especificação (OAS 3.0)</a></p>
 
 <h3 id="obtém-a-lista-de-financiamentos-de-pessoa-natural.-parameters">Parâmetros</h3>
 
@@ -7145,7 +7801,53 @@ This operation does not require authentication
 
 <p><code>GET /business-financings</code></p>
 
-<p>Obtém a lista de Financiamentos de Pessoa Jurídica.</p>
+<table><thead>
+<tr>
+<th>Versão</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>1</td>
+</tr>
+</tbody></table>
+
+<h3 id='visao-geral-15'>Visão geral</h3>
+
+<p>Obtém os dados de Financiamento para pessoa jurídica.</p>
+
+<p>Esta especificação inclui todos os itens relevantes para a Especificação de API de Financiamentos para pessoa jurídica de dados abertos.</p>
+
+<p>Tags: <a href="#glossarioCNPJ">CNPJ (CNPJ Number)</a>, <a href="#glossarioMarca">Marca (Brand)</a>, <a href="#glossarioFinanciamento">Financiamento (Financing)</a>, <a href="#glossarioInstituicaoFinanceira">Instituição Financeira (Company)</a>, <a href="#glossarioTaxaReferencial">Taxa Referencial – TR (Referential Rate)</a>, <a href="#glossarioIndexador">Indexador (Indexer)</a> e <a href="#api-canais-de-atendimento-divulgacao-dos-valores-de-tarifas-e-taxas-de-juros-remuneratorias">Divulgação dos valores de tarifas e taxas de juros remuneratórias (Disclosure of Fees and Interest Rates)</a>.</p>
+
+<h3 id='visao-de-alto-nivel-das-estruturas-de-dados-6'>Visão de alto nível das estruturas de dados</h3>
+
+<p><img class='lazy' src='images/loading-e35b35a4.gif' data-src='images/tld/TLD_Business_Financings_v1-ab961edd.png'/></p>
+
+<h3 id='dicionario-de-dados-12'>Dicionário de dados</h3>
+
+<p><a href='dictionary/business_financings.csv' target="_blank">Fazer download do dicionário de dados</a></p>
+
+<h3 id='resposta-15'>Resposta</h3>
+
+<table><thead>
+<tr>
+<th style="text-align: left">Status</th>
+<th style="text-align: left">Significado</th>
+<th style="text-align: left">Descrição</th>
+<th style="text-align: left">Schema</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">200</td>
+<td style="text-align: left">OK</td>
+<td style="text-align: left">Sucesso</td>
+<td style="text-align: left"><a href="#schemaResponseBusinessFinancings">ResponseBusinessFinancings</a></td>
+</tr>
+</tbody></table>
+
+<h3 id='especificacao-em-oas-3-0-15'>Especificação em OAS 3.0</h3>
+
+<p><a href='swagger/swagger_products_services_apis.yaml'>Download da Especificação (OAS 3.0)</a></p>
 
 <h3 id="obtém-a-lista-de-financiamentos-de-pessoa-jurídica.-parameters">Parâmetros</h3>
 
@@ -7467,7 +8169,53 @@ This operation does not require authentication
 
 <p><code>GET /business-invoice-financings</code></p>
 
-<p>Obtém a lista de Adiantamento de Recebíveis de Pessoa Jurídica.</p>
+<table><thead>
+<tr>
+<th>Versão</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>1</td>
+</tr>
+</tbody></table>
+
+<h3 id='visao-geral-16'>Visão geral</h3>
+
+<p>Obtém os dados de Antecipação de Recebíveis.</p>
+
+<p>Esta especificação inclui todos os itens relevantes para a Especificação de API de Antecipação de Recebíveis para pessoa natural de dados abertos.</p>
+
+<p>Tags: <a href="#glossarioCNPJ">CNPJ (CNPJ Number)</a>, <a href="#glossarioMarca">Marca (Brand)</a>, <a href="#glossarioDireitoCreditorioDescontado">Direito Creditório Descontado (Invoice Financing)</a>, <a href="#glossarioInstituicaoFinanceira">Instituição Financeira (Company)</a>, <a href="#glossarioTaxaReferencial">Taxa Referencial – TR (Referential Rate)</a>, <a href="#glossarioIndexador">Indexador (Indexer)</a> e <a href="#api-canais-de-atendimento-divulgacao-dos-valores-de-tarifas-e-taxas-de-juros-remuneratorias">Divulgação dos valores de tarifas e taxas de juros remuneratórias (Disclosure of Fees and Interest Rates)</a>.</p>
+
+<h3 id='visao-de-alto-nivel-das-estruturas-de-dados-7'>Visão de alto nível das estruturas de dados</h3>
+
+<p><img class='lazy' src='images/loading-e35b35a4.gif' data-src='images/tld/TLD_Personal_Invoice_Financing_v1-0ad5b8b5.png'/></p>
+
+<h3 id='dicionario-de-dados-13'>Dicionário de dados</h3>
+
+<p><a href='dictionary/personal_invoice_financings.csv' target="_blank">Fazer download do dicionário de dados</a></p>
+
+<h3 id='resposta-16'>Resposta</h3>
+
+<table><thead>
+<tr>
+<th style="text-align: left">Status</th>
+<th style="text-align: left">Significado</th>
+<th style="text-align: left">Descrição</th>
+<th style="text-align: left">Schema</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">200</td>
+<td style="text-align: left">OK</td>
+<td style="text-align: left">Sucesso</td>
+<td style="text-align: left"><a href="#schemaResponsePersonalInvoiceFinancings">ResponsePersonalInvoiceFinancings</a></td>
+</tr>
+</tbody></table>
+
+<h3 id='especificacao-em-oas-3-0-16'>Especificação em OAS 3.0</h3>
+
+<p><a href='swagger/swagger_products_services_apis.yaml'>Download da Especificação (OAS 3.0)</a></p>
 
 <h3 id="obtém-a-lista-de-adiantamento-de-recebíveis-de-pessoa-jurídica.-parameters">Parâmetros</h3>
 
@@ -7628,7 +8376,53 @@ This operation does not require authentication
 
 <p><code>GET /personal-unarranged-account-overdraft</code></p>
 
-<p>Obtém a lista de adiantamento de depositante de Pessoa Natural.</p>
+<table><thead>
+<tr>
+<th>Versão</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>1</td>
+</tr>
+</tbody></table>
+
+<h3 id='visao-geral-17'>Visão geral</h3>
+
+<p>Obtém os dados de Adiantamento a Depositante para pessoa natural.</p>
+
+<p>Esta especificação inclui todos os itens relevantes para a Especificação de API de Adiantamento a Depositante para pessoa natural de dados abertos.</p>
+
+<p>Tags: <a href="#glossarioCNPJ">CNPJ (CNPJ Number)</a>, <a href="#glossarioMarca">Marca (Brand)</a>, <a href="#glossarioInstituicaoFinanceira">Instituição Financeira (Company)</a>, <a href="#glossarioTaxaReferencial">Taxa Referencial – TR (Referential Rate)</a>, <a href="#glossarioIndexador">Indexador (Indexer)</a> e <a href="#api-canais-de-atendimento-divulgacao-dos-valores-de-tarifas-e-taxas-de-juros-remuneratorias">Divulgação dos valores de tarifas e taxas de juros remuneratórias (Disclosure of Fees and Interest Rates)</a>.</p>
+
+<h3 id='visao-de-alto-de-nivel-das-estruturas-de-dados-7'>Visão de alto de nível das estruturas de dados</h3>
+
+<p><img class='lazy' src='images/loading-e35b35a4.gif' data-src='images/tld/TLD_Personal_Unarranged_Account_Overdraft_v1-58f63d70.png'/></p>
+
+<h3 id='dicionario-de-dados-14'>Dicionário de dados</h3>
+
+<p><a href='dictionary/personal_unarranged_account_overdraft.csv' target="_blank">Fazer download do dicionário de dados</a></p>
+
+<h3 id='resposta-17'>Resposta</h3>
+
+<table><thead>
+<tr>
+<th style="text-align: left">Status</th>
+<th style="text-align: left">Significado</th>
+<th style="text-align: left">Descrição</th>
+<th style="text-align: left">Schema</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">200</td>
+<td style="text-align: left">OK</td>
+<td style="text-align: left">Sucesso</td>
+<td style="text-align: left"><a href="#schemaResponsePersonalUnarrangedAccountOverdraft">ResponsePersonalUnarrangedAccountOverdraft</a></td>
+</tr>
+</tbody></table>
+
+<h3 id='especificacao-em-oas-3-0-17'>Especificação em OAS 3.0</h3>
+
+<p><a href='swagger/swagger_products_services_apis.yaml'>Download da Especificação (OAS 3.0)</a></p>
 
 <h3 id="obtém-a-lista-de-adiantamento-de-depositante-de-pessoa-natural.-parameters">Parâmetros</h3>
 
