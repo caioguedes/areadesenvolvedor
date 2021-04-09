@@ -4315,67 +4315,6 @@ License: <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache 2.0</a></p
 
 <p>Este <em>endpoint</em> possibilita ao diretório consultar estatísticas operacionais das APIs disponibilizadas pelas instituições financeiras, a fim de avaliar a qualidade dos serviços fornecidos ao usuário final.</p>
 
-<h3 id='parametros-de-entrada'>Parâmetros de entrada</h3>
-
-<table><thead>
-<tr>
-<th style="text-align: left">Nome</th>
-<th style="text-align: left">Origem</th>
-<th style="text-align: left">Tipo</th>
-<th style="text-align: left">Obrigatório</th>
-<th style="text-align: left">Descrição</th>
-</tr>
-</thead><tbody>
-<tr>
-<td style="text-align: left">period</td>
-<td style="text-align: left">query</td>
-<td style="text-align: left"><a href="#schemaEnumAdminMetricsPeriod">Enum AdminMetricsPeriod</a></td>
-<td style="text-align: left">Não</td>
-<td style="text-align: left">O período a ser retornado. Se não for informado, o padrão será ALL</td>
-</tr>
-</tbody></table>
-
-<h3 id='enum-adminmetricsperiod'>Enum AdminMetricsPeriod</h3>
-
-<p><a id="schemaEnumAdminMetricsPeriod"></a></p>
-
-<table><thead>
-<tr>
-<th style="text-align: left">Propriedade</th>
-<th style="text-align: left">Código</th>
-<th style="text-align: left">Definição</th>
-</tr>
-</thead><tbody>
-<tr>
-<td style="text-align: left">period</td>
-<td style="text-align: left">CURRENT</td>
-<td style="text-align: left">Métricas do dia atual.</td>
-</tr>
-<tr>
-<td style="text-align: left">period</td>
-<td style="text-align: left">ALL</td>
-<td style="text-align: left">Métricas de todo o período disponível.</td>
-</tr>
-</tbody></table>
-
-<h3 id='resposta'>Resposta</h3>
-
-<table><thead>
-<tr>
-<th style="text-align: left">Status</th>
-<th style="text-align: left">Significado</th>
-<th style="text-align: left">Descrição</th>
-<th style="text-align: left">Schema</th>
-</tr>
-</thead><tbody>
-<tr>
-<td style="text-align: left">200</td>
-<td style="text-align: left">OK</td>
-<td style="text-align: left">Sucesso</td>
-<td style="text-align: left"><a href="#schemaResponseMetricsList">ResponseMetricsList</a></td>
-</tr>
-</tbody></table>
-
 <h3 id='especificacao-em-oas-3-0'>Especificação em OAS 3.0</h3>
 
 <p><a href='swagger/swagger_admin_apis.yaml'>Download da Especificação (OAS 3.0)</a></p>
@@ -4632,37 +4571,6 @@ This operation does not require authentication
 
 <p>Obtêm a lista de indisponibilidade agendada para os serviços.</p>
 
-<h3 id='parametros'>Parâmetros</h3>
-
-<table><thead>
-<tr>
-<th>Nome</th>
-<th>Origem</th>
-<th>Tipo</th>
-<th>Obrigatório</th>
-<th>Descrição</th>
-</tr>
-</thead><tbody>
-</tbody></table>
-
-<h3 id='resposta-2'>Resposta</h3>
-
-<table><thead>
-<tr>
-<th style="text-align: left">Status</th>
-<th style="text-align: left">Significado</th>
-<th style="text-align: left">Descrição</th>
-<th style="text-align: left">Schema</th>
-</tr>
-</thead><tbody>
-<tr>
-<td style="text-align: left">200</td>
-<td style="text-align: left">OK</td>
-<td style="text-align: left">Sucesso</td>
-<td style="text-align: left"><a href="#schemaResponseDiscoveryOutagesList">ResponseDiscoveryOutagesList</a></td>
-</tr>
-</tbody></table>
-
 <h3 id='especificacao-em-oas-3-0-2'>Especificação em OAS 3.0</h3>
 
 <p><a href='swagger/swagger_common_apis.yaml'>Download da Especificação (OAS 3.0)</a></p>
@@ -4806,24 +4714,6 @@ This operation does not require authentication
 <h3 id='visao-geral-3'>Visão geral</h3>
 
 <p>Obtém a descrição referente ao código de status retornado pelas APIs.</p>
-
-<h3 id='resposta-3'>Resposta</h3>
-
-<table><thead>
-<tr>
-<th style="text-align: left">Status</th>
-<th style="text-align: left">Significado</th>
-<th style="text-align: left">Descrição</th>
-<th style="text-align: left">Schema</th>
-</tr>
-</thead><tbody>
-<tr>
-<td style="text-align: left">200</td>
-<td style="text-align: left">OK</td>
-<td style="text-align: left">Sucesso</td>
-<td style="text-align: left"><a href="#schemaResponseDiscoveryStatusList">ResponseDiscoveryStatusList</a></td>
-</tr>
-</tbody></table>
 
 <h3 id='especificacao-em-oas-3-0-3'>Especificação em OAS 3.0</h3>
 
@@ -4974,24 +4864,6 @@ This operation does not require authentication
 <h3 id='dicionario-de-dados'>Dicionário de dados</h3>
 
 <p><a href='dictionary/banking_agents.csv' target="_blank">Fazer download do dicionário de dados</a></p>
-
-<h3 id='resposta-4'>Resposta</h3>
-
-<table><thead>
-<tr>
-<th style="text-align: left">Status</th>
-<th style="text-align: left">Significado</th>
-<th style="text-align: left">Descrição</th>
-<th style="text-align: left">Schema</th>
-</tr>
-</thead><tbody>
-<tr>
-<td style="text-align: left">200</td>
-<td style="text-align: left">OK</td>
-<td style="text-align: left">Sucesso</td>
-<td style="text-align: left"><a href="#schemaResponseBankingAgentsList">ResponseBankingAgentsList</a></td>
-</tr>
-</tbody></table>
 
 <h3 id='especificacao-em-oas-3-0-4'>Especificação em OAS 3.0</h3>
 
@@ -5347,24 +5219,6 @@ This operation does not require authentication
 
 <p><a href='dictionary/branches.csv' target="_blank">Fazer download do dicionário de dados</a></p>
 
-<h3 id='resposta-5'>Resposta</h3>
-
-<table><thead>
-<tr>
-<th style="text-align: left">Status</th>
-<th style="text-align: left">Significado</th>
-<th style="text-align: left">Descrição</th>
-<th style="text-align: left">Schema</th>
-</tr>
-</thead><tbody>
-<tr>
-<td style="text-align: left">200</td>
-<td style="text-align: left">OK</td>
-<td style="text-align: left">Sucesso</td>
-<td style="text-align: left"><a href="#schemaResponseBranchesList">ResponseBranchesList</a></td>
-</tr>
-</tbody></table>
-
 <h3 id='especificacao-em-oas-3-0-5'>Especificação em OAS 3.0</h3>
 
 <p><a href='swagger/swagger_channels_apis.yaml'>Download da Especificação (OAS 3.0)</a></p>
@@ -5602,24 +5456,6 @@ This operation does not require authentication
 
 <p><a href='dictionary/electronic_channels.csv' target="_blank">Fazer download do dicionário de dados</a></p>
 
-<h3 id='resposta-6'>Resposta</h3>
-
-<table><thead>
-<tr>
-<th style="text-align: left">Status</th>
-<th style="text-align: left">Significado</th>
-<th style="text-align: left">Descrição</th>
-<th style="text-align: left">Schema</th>
-</tr>
-</thead><tbody>
-<tr>
-<td style="text-align: left">200</td>
-<td style="text-align: left">OK</td>
-<td style="text-align: left">Sucesso</td>
-<td style="text-align: left"><a href="#schemaResponseElectronicChannelsList">ResponseElectronicChannelsList</a></td>
-</tr>
-</tbody></table>
-
 <h3 id='especificacao-em-oas-3-0-6'>Especificação em OAS 3.0</h3>
 
 <p><a href='swagger/swagger_channels_apis.yaml'>Download da Especificação (OAS 3.0)</a></p>
@@ -5796,24 +5632,6 @@ This operation does not require authentication
 <h3 id='dicionario-de-dados-4'>Dicionário de dados</h3>
 
 <p><a href='dictionary/phone_channels.csv' target="_blank">Fazer download do dicionário de dados</a></p>
-
-<h3 id='resposta-7'>Resposta</h3>
-
-<table><thead>
-<tr>
-<th style="text-align: left">Status</th>
-<th style="text-align: left">Significado</th>
-<th style="text-align: left">Descrição</th>
-<th style="text-align: left">Schema</th>
-</tr>
-</thead><tbody>
-<tr>
-<td style="text-align: left">200</td>
-<td style="text-align: left">OK</td>
-<td style="text-align: left">Sucesso</td>
-<td style="text-align: left"><a href="#schemaResponsePhoneChannelsList">ResponsePhoneChannelsList</a></td>
-</tr>
-</tbody></table>
 
 <h3 id='especificacao-em-oas-3-0-7'>Especificação em OAS 3.0</h3>
 
@@ -6104,24 +5922,6 @@ This operation does not require authentication
 
 <p><a href='dictionary/automated_teller_machines.csv' target="_blank">Fazer download do dicionário de dados</a></p>
 
-<h3 id='resposta-8'>Resposta</h3>
-
-<table><thead>
-<tr>
-<th style="text-align: left">Status</th>
-<th style="text-align: left">Significado</th>
-<th style="text-align: left">Descrição</th>
-<th style="text-align: left">Schema</th>
-</tr>
-</thead><tbody>
-<tr>
-<td style="text-align: left">200</td>
-<td style="text-align: left">OK</td>
-<td style="text-align: left">Sucesso</td>
-<td style="text-align: left"><a href="#schemaResponseSharedAutomatedTellerMachinesList">ResponseSharedAutomatedTellerMachinesList</a></td>
-</tr>
-</tbody></table>
-
 <h3 id='especificacao-em-oas-3-0-8'>Especificação em OAS 3.0</h3>
 
 <p><a href='swagger/swagger_channels_apis.yaml'>Download da Especificação (OAS 3.0)</a></p>
@@ -6317,24 +6117,6 @@ This operation does not require authentication
 <h3 id='dicionario-de-dados-6'>Dicionário de dados</h3>
 
 <p><a href='dictionary/personal_accounts.csv' target="_blank">Fazer download do dicionário de dados</a></p>
-
-<h3 id='resposta-9'>Resposta</h3>
-
-<table><thead>
-<tr>
-<th style="text-align: left">Status</th>
-<th style="text-align: left">Significado</th>
-<th style="text-align: left">Descrição</th>
-<th style="text-align: left">Schema</th>
-</tr>
-</thead><tbody>
-<tr>
-<td style="text-align: left">200</td>
-<td style="text-align: left">OK</td>
-<td style="text-align: left">Sucesso</td>
-<td style="text-align: left"><a href="#schemaResponsePersonalAccounts">ResponsePersonalAccounts</a></td>
-</tr>
-</tbody></table>
 
 <h3 id='especificacao-em-oas-3-0-9'>Especificação em OAS 3.0</h3>
 
@@ -6557,24 +6339,6 @@ This operation does not require authentication
 <h3 id='dicionario-de-dados-7'>Dicionário de dados</h3>
 
 <p><a href='dictionary/business_accounts.csv' target="_blank">Fazer download do dicionário de dados</a></p>
-
-<h3 id='resposta-10'>Resposta</h3>
-
-<table><thead>
-<tr>
-<th style="text-align: left">Status</th>
-<th style="text-align: left">Significado</th>
-<th style="text-align: left">Descrição</th>
-<th style="text-align: left">Schema</th>
-</tr>
-</thead><tbody>
-<tr>
-<td style="text-align: left">200</td>
-<td style="text-align: left">OK</td>
-<td style="text-align: left">Sucesso</td>
-<td style="text-align: left"><a href="#schemaResponseBusinessAccounts">ResponseBusinessAccounts</a></td>
-</tr>
-</tbody></table>
 
 <h3 id='especificacao-em-oas-3-0-10'>Especificação em OAS 3.0</h3>
 
@@ -6949,24 +6713,6 @@ This operation does not require authentication
 
 <p><a href='dictionary/personal_loans.csv' target="_blank">Fazer download do dicionário de dados</a></p>
 
-<h3 id='resposta-11'>Resposta</h3>
-
-<table><thead>
-<tr>
-<th style="text-align: left">Status</th>
-<th style="text-align: left">Significado</th>
-<th style="text-align: left">Descrição</th>
-<th style="text-align: left">Schema</th>
-</tr>
-</thead><tbody>
-<tr>
-<td style="text-align: left">200</td>
-<td style="text-align: left">OK</td>
-<td style="text-align: left">Sucesso</td>
-<td style="text-align: left"><a href="#schemaResponsePersonalLoans">ResponsePersonalLoans</a></td>
-</tr>
-</tbody></table>
-
 <h3 id='especificacao-em-oas-3-0-11'>Especificação em OAS 3.0</h3>
 
 <p><a href='swagger/swagger_products_services_apis.yaml'>Download da Especificação (OAS 3.0)</a></p>
@@ -7153,24 +6899,6 @@ This operation does not require authentication
 <h3 id='dicionario-de-dados-9'>Dicionário de dados</h3>
 
 <p><a href='dictionary/personal_credit_cards.csv' target="_blank">Fazer download do dicionário de dados</a></p>
-
-<h3 id='resposta-12'>Resposta</h3>
-
-<table><thead>
-<tr>
-<th style="text-align: left">Status</th>
-<th style="text-align: left">Significado</th>
-<th style="text-align: left">Descrição</th>
-<th style="text-align: left">Schema</th>
-</tr>
-</thead><tbody>
-<tr>
-<td style="text-align: left">200</td>
-<td style="text-align: left">OK</td>
-<td style="text-align: left">Sucesso</td>
-<td style="text-align: left"><a href="#schemaResponsePersonalCreditCards">ResponsePersonalCreditCards</a></td>
-</tr>
-</tbody></table>
 
 <h3 id='especificacao-em-oas-3-0-12'>Especificação em OAS 3.0</h3>
 
@@ -7386,24 +7114,6 @@ This operation does not require authentication
 <h3 id='dicionario-de-dados-10'>Dicionário de dados</h3>
 
 <p><a href='dictionary/business_credit_cards.csv' target="_blank">Fazer download do dicionário de dados</a></p>
-
-<h3 id='resposta-13'>Resposta</h3>
-
-<table><thead>
-<tr>
-<th style="text-align: left">Status</th>
-<th style="text-align: left">Significado</th>
-<th style="text-align: left">Descrição</th>
-<th style="text-align: left">Schema</th>
-</tr>
-</thead><tbody>
-<tr>
-<td style="text-align: left">200</td>
-<td style="text-align: left">OK</td>
-<td style="text-align: left">Sucesso</td>
-<td style="text-align: left"><a href="#schemaResponseBusinessCreditCards">ResponseBusinessCreditCards</a></td>
-</tr>
-</tbody></table>
 
 <h3 id='especificacao-em-oas-3-0-13'>Especificação em OAS 3.0</h3>
 
@@ -7622,24 +7332,6 @@ This operation does not require authentication
 
 <p><a href='dictionary/personal_financings.csv' target="_blank">Fazer download do dicionário de dados</a></p>
 
-<h3 id='resposta-14'>Resposta</h3>
-
-<table><thead>
-<tr>
-<th style="text-align: left">Status</th>
-<th style="text-align: left">Significado</th>
-<th style="text-align: left">Descrição</th>
-<th style="text-align: left">Schema</th>
-</tr>
-</thead><tbody>
-<tr>
-<td style="text-align: left">200</td>
-<td style="text-align: left">OK</td>
-<td style="text-align: left">Sucesso</td>
-<td style="text-align: left"><a href="#schemaResponsePersonalFinancings">ResponsePersonalFinancings</a></td>
-</tr>
-</tbody></table>
-
 <h3 id='especificacao-em-oas-3-0-14'>Especificação em OAS 3.0</h3>
 
 <p><a href='swagger/swagger_products_services_apis.yaml'>Download da Especificação (OAS 3.0)</a></p>
@@ -7828,24 +7520,6 @@ This operation does not require authentication
 <h3 id='dicionario-de-dados-12'>Dicionário de dados</h3>
 
 <p><a href='dictionary/business_financings.csv' target="_blank">Fazer download do dicionário de dados</a></p>
-
-<h3 id='resposta-15'>Resposta</h3>
-
-<table><thead>
-<tr>
-<th style="text-align: left">Status</th>
-<th style="text-align: left">Significado</th>
-<th style="text-align: left">Descrição</th>
-<th style="text-align: left">Schema</th>
-</tr>
-</thead><tbody>
-<tr>
-<td style="text-align: left">200</td>
-<td style="text-align: left">OK</td>
-<td style="text-align: left">Sucesso</td>
-<td style="text-align: left"><a href="#schemaResponseBusinessFinancings">ResponseBusinessFinancings</a></td>
-</tr>
-</tbody></table>
 
 <h3 id='especificacao-em-oas-3-0-15'>Especificação em OAS 3.0</h3>
 
@@ -8197,24 +7871,6 @@ This operation does not require authentication
 
 <p><a href='dictionary/personal_invoice_financings.csv' target="_blank">Fazer download do dicionário de dados</a></p>
 
-<h3 id='resposta-16'>Resposta</h3>
-
-<table><thead>
-<tr>
-<th style="text-align: left">Status</th>
-<th style="text-align: left">Significado</th>
-<th style="text-align: left">Descrição</th>
-<th style="text-align: left">Schema</th>
-</tr>
-</thead><tbody>
-<tr>
-<td style="text-align: left">200</td>
-<td style="text-align: left">OK</td>
-<td style="text-align: left">Sucesso</td>
-<td style="text-align: left"><a href="#schemaResponsePersonalInvoiceFinancings">ResponsePersonalInvoiceFinancings</a></td>
-</tr>
-</tbody></table>
-
 <h3 id='especificacao-em-oas-3-0-16'>Especificação em OAS 3.0</h3>
 
 <p><a href='swagger/swagger_products_services_apis.yaml'>Download da Especificação (OAS 3.0)</a></p>
@@ -8404,24 +8060,6 @@ This operation does not require authentication
 
 <p><a href='dictionary/personal_unarranged_account_overdraft.csv' target="_blank">Fazer download do dicionário de dados</a></p>
 
-<h3 id='resposta-17'>Resposta</h3>
-
-<table><thead>
-<tr>
-<th style="text-align: left">Status</th>
-<th style="text-align: left">Significado</th>
-<th style="text-align: left">Descrição</th>
-<th style="text-align: left">Schema</th>
-</tr>
-</thead><tbody>
-<tr>
-<td style="text-align: left">200</td>
-<td style="text-align: left">OK</td>
-<td style="text-align: left">Sucesso</td>
-<td style="text-align: left"><a href="#schemaResponsePersonalUnarrangedAccountOverdraft">ResponsePersonalUnarrangedAccountOverdraft</a></td>
-</tr>
-</tbody></table>
-
 <h3 id='especificacao-em-oas-3-0-17'>Especificação em OAS 3.0</h3>
 
 <p><a href='swagger/swagger_products_services_apis.yaml'>Download da Especificação (OAS 3.0)</a></p>
@@ -8581,7 +8219,31 @@ This operation does not require authentication
 
 <p><code>GET /business-unarranged-account-overdraft</code></p>
 
-<p>Obtém a lista de adiantamento de depositante de Pessoa Jurídica.</p>
+<table><thead>
+<tr>
+<th>Versão</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>1</td>
+</tr>
+</tbody></table>
+
+<h3 id='visao-geral-18'>Visão geral</h3>
+
+<p>Obtém os dados de Adiantamento a Depositante para pessoa natural.</p>
+
+<p>Esta especificação inclui todos os itens relevantes para a Especificação de API de Adiantamento a Depositante para pessoa natural de dados abertos.</p>
+
+<p>Tags: <a href="#glossarioCNPJ">CNPJ (CNPJ Number)</a>, <a href="#glossarioMarca">Marca (Brand)</a>, <a href="#glossarioInstituicaoFinanceira">Instituição Financeira (Company)</a>, <a href="#glossarioTaxaReferencial">Taxa Referencial – TR (Referential Rate)</a>, <a href="#glossarioIndexador">Indexador (Indexer)</a> e <a href="#api-canais-de-atendimento-divulgacao-dos-valores-de-tarifas-e-taxas-de-juros-remuneratorias">Divulgação dos valores de tarifas e taxas de juros remuneratórias (Disclosure of Fees and Interest Rates)</a>.</p>
+
+<h3 id='visao-de-alto-de-nivel-das-estruturas-de-dados-8'>Visão de alto de nível das estruturas de dados</h3>
+
+<p><img class='lazy' src='images/loading-e35b35a4.gif' data-src='images/tld/TLD_Personal_Unarranged_Account_Overdraft_v1-58f63d70.png'/></p>
+
+<h3 id='dicionario-de-dados-15'>Dicionário de dados</h3>
+
+<p><a href='dictionary/personal_unarranged_account_overdraft.csv' target="_blank">Fazer download do dicionário de dados</a></p>
 
 <h3 id="obtém-a-lista-de-adiantamento-de-depositante-de-pessoa-jurídica.-parameters">Parâmetros</h3>
 
