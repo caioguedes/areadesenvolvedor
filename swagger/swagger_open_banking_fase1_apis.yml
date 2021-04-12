@@ -715,7 +715,7 @@ paths:
 
         ### Visão geral
 
-        Obtém os dados de Adiantamento a Depositante para pessoa natural.
+        Obtém os dados de Adiantamento a Depositante para pessoa jurídica.
 
         Esta especificação inclui todos os itens relevantes para a Especificação de API de Adiantamento a Depositante para pessoa natural de dados abertos.
 

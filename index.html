@@ -210,7 +210,7 @@
     </a>
     <div class="toc-wrapper">
       <img src="images/logo-7ed2e1f6.png" class="logo" alt="" />
-      <small style="padding: 23px; color: white">Versão: v1.0.0-rc6.1</small>
+      <small style="padding: 23px; color: white">Versão: v1.0.0-rc6.0</small>
         <div class="lang-selector">
               <a href="#" data-language-name="javascript">javascript</a>
               <a href="#" data-language-name="python">python</a>
@@ -912,6 +912,17 @@
                   </li>
                   <li>
                     <a href="#tocS_CNPJ" class="toc-h2 toc-link" data-title="CNPJ">CNPJ</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#divulgacao-dos-valores-de-tarifas-e-taxas-de-juros-remuneratorias" class="toc-h1 toc-link" data-title="Divulgação dos valores de tarifas e taxas de juros remuneratórias">Divulgação dos valores de tarifas e taxas de juros remuneratórias</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#tarifas-apuracao-frequencia-e-valores-correspondentes" class="toc-h2 toc-link" data-title="Tarifas – Apuração Frequência e valores correspondentes">Tarifas – Apuração Frequência e valores correspondentes</a>
+                  </li>
+                  <li>
+                    <a href="#apuracao-frequencia-taxas-juros-remuneratorios" class="toc-h2 toc-link" data-title="Apuração Frequência Taxas Juros remuneratórios">Apuração Frequência Taxas Juros remuneratórios</a>
                   </li>
               </ul>
           </li>
@@ -8223,7 +8234,7 @@ This operation does not require authentication
 
 <h3 id='visao-geral-18'>Visão geral</h3>
 
-<p>Obtém os dados de Adiantamento a Depositante para pessoa natural.</p>
+<p>Obtém os dados de Adiantamento a Depositante para pessoa jurídica.</p>
 
 <p>Esta especificação inclui todos os itens relevantes para a Especificação de API de Adiantamento a Depositante para pessoa natural de dados abertos.</p>
 
@@ -25390,6 +25401,128 @@ Conta de pagamento pré-paga: segundo CIRCULAR Nº 3.680, BCB de  2013, é a &#3
 <td>CNPJ</td>
 </tr>
 </tbody></table>
+
+<h1 id='divulgacao-dos-valores-de-tarifas-e-taxas-de-juros-remuneratorias'>Divulgação dos valores de tarifas e taxas de juros remuneratórias</h1>
+<p>Conforme disposto na Circular nº 4.015, art. 3º, para fins de compartilhamento dos valores de tarifas e taxas de juros remuneratórias dos produtos e serviços ofertados, as instituições devem compartilhar uma distribuição de frequência relativa dos valores cobrados e dos clientes.</p>
+
+<p>Segundo o Art. 6º  da Instrução Normativa nº 32 BCB, de 2020: “O compartilhamento da distribuição de frequência relativa dos valores de tarifas e taxas de juros cobrados dos clientes, de que trata o § 2º do art. 3º da Circular nº 4.015, de 2020, deve dar-se com base em quatro faixas de igual tamanho, com explicitação dos valores sobre a mediana e o percentual de clientes em cada uma dessas faixas, além dos valores máximos e mínimos do universo, segmentados em pessoas naturais e jurídicas, bem como por tipo de serviço ou modalidade de operação e por indexador ou referencial, no caso de operações pós-fixadas.</p>
+
+<p>§ 1º  Admite-se que as instituições compartilhem dados relacionados à distribuição de frequência de que trata o caput em base atualizada em periodicidade mensal, divulgada no décimo dia útil de cada mês, a partir de janeiro de 2021, referente a valores cobrados de seus clientes no mês anterior.</p>
+
+<p>§ 2º  A distribuição de frequência relativa a taxas de juros divulgada conforme o § 1º deve corresponder às operações de crédito concedidas no mês anterior”’.</p>
+
+<p>Desta forma, cada instituição deve, no momento de compartilhamento, ordenar sua base em ordem crescente de valores cobrados por tarifas e taxas de juros remuneratórias dos produtos e serviços ofertados durante o mês de apuração, segmentá-la em quatro faixas de mesmo valor e divulgar 10 valores:</p>
+
+<ul>
+<li>Valores: máximo e mínimo do universo de clientes (i.e. 2 valores)</li>
+<li>Mediana de cada faixa (i.e. 4 valores)</li>
+<li>Percentual de clientes em cada faixa (i.e. 4 valores)</li>
+</ul>
+
+<p>Devem ser utilizados no cálculo os valores devidos de tarifas e os valores cobrados de taxas de juros remuneratórias disponíveis nas bases de cliente no mês anterior.</p>
+
+<p>Caso haja mais de 1 evento por cliente referente ao mesmo produto e/ou serviço, deverá ser considerado apenas 1 valor, calculado como a média aritmética dos valores das ocorrências daquele cliente.</p>
+
+<p>Para taxas de juros remuneratórias, os valores compartilhados/divulgados serão os que correspondem às concessões no mês da apuração, segmentados em pessoas naturais e jurídicas, bem como por modalidade de operação e por indexador ou referencial, no caso de operações pós-fixadas.</p>
+
+<p>Para tarifas, a segmentação é por pessoas naturais e jurídicas e por tipo de serviço referente a tarifa avulsa (fora do Pacote de Serviço) cobradas no mês de apuração, devendo-se considerar inclusive as de valor zero (ou isentas).</p>
+<h2 id='tarifas-apuracao-frequencia-e-valores-correspondentes'>Tarifas – Apuração Frequência e valores correspondentes</h2>
+<p><strong>Serviço:</strong> tarifas avulsas cobradas no mês de apuração. (Cada tarifa será informada separadamente, devendo ser informadas tantas tarifas quanto as que satisfizerem os critérios de apuração)
+As tarifas de valor zero (ou isentas) fora de pacotes de serviços, caso tenham ocorrido no mês de referência, devem ser consideradas na distribuição de frequência relativa dos valores.</p>
+
+<p><strong>Tipo Pessoa:</strong> PN ou PJ</p>
+
+<p><strong>Período:</strong> Mês fechado, identificado como M-1</p>
+
+<p><strong>Base Clientes:</strong> clientes segregados por tipo de pessoa que tiveram cobrança da mesma tarifa avulsa (não inclusa no Pacote de serviços) no mês de apuração.
+Caso haja mais de 1 evento por cliente, referente ao mesmo produto e/ou serviço, deverá ser considerado apenas 1 valor, calculado como a média aritmética dos valores das ocorrências daquele cliente</p>
+
+<p><strong>Processo de Apuração para cada tipo de tarifa que satisfizer critérios de apuração:</strong></p>
+
+<ol>
+<li>Identificar clientes com mais de uma ocorrência de evento e calcular a média aritmética  sobre valores cobrados;</li>
+<li>Enfileirar os valores em ordem crescente de grandeza;</li>
+<li>Definir menor (MenorVL) e maior valor (MaiorVL)  relativos às tarifas enfileiradas em ordem crescente</li>
+<li>Definir: ( MaiorVL – MenorVL )  /  4 = Intervalo para definição faixas de valores (e se MenorVL = MaiorVL, então (MaiorVL – 0) / 4</li>
+<li>Calcular mediana dos valores em cada faixa</li>
+<li>Calcular o percentual de clientes por faixa ( soma dos valores apurados = 100% )</li>
+</ol>
+
+<p><strong>Exemplo de Uso:</strong></p>
+
+<ul>
+<li>Tarifas – Apuração Frequência e valores correspondentes</li>
+</ul>
+
+<p><img class='lazy' src='images/loading-e35b35a4.gif' data-src='images/extras/Exemplo-Tarifas-Apuracao_Frequencia_e_valores_correspondentes-3ba45525.png'/>
+<a href='images/extras/Exemplo-Tarifas-Apuracao_Frequencia_e_valores_correspondentes-3ba45525.png' target="_blank">Download do exemplo</a></p>
+
+<ul>
+<li>Tarifas – Distribuição de Frequência</li>
+</ul>
+
+<p><img class='lazy' src='images/loading-e35b35a4.gif' data-src='images/extras/Exemplo-Tarifas-Distribuicao_de_Frequencia-3f433712.png'/>
+<a href='images/extras/Exemplo-Tarifas-Distribuicao_de_Frequencia-3f433712.png' target="_blank">Download do exemplo</a></p>
+<h2 id='apuracao-frequencia-taxas-juros-remuneratorios'>Apuração Frequência Taxas Juros remuneratórios</h2>
+<p><strong>Modalidade:</strong> relativa às operações de crédito concedidas (contratadas) no mês da apuração (M-1 – mês anterior)</p>
+
+<p><strong>Tipo Pessoa:</strong>  PN ou PJ</p>
+
+<p><strong>Taxa ou Indexador:</strong> referente ao custo da operação contratada e percentual de incidência (conforme Anexo 5: Taxa referencial ou Indexador (Indx), do Documento 3040, BCB) – Dado informativo</p>
+
+<p><strong>Período:</strong> mês fechado, identificado como M-1</p>
+
+<p><strong>Base Clientes:</strong> clientes segregados por tipo de pessoa (contrato) que tomou crédito de mesma Modalidade no mês de apuração. Com mesmo tipo de taxa ou Indexador e mesmo percentual aplicado. Caso haja mais de 1 evento por cliente referente a mesma Modalidade e Indexador deverá ser considerado apenas 1 valor, calculado como a média aritmética dos valores das ocorrências daquele cliente</p>
+
+<p><strong>Processo de Apuração para cada tipo de Indexador/taxa – percentual aplicado para cada Modalidade que satisfizer os critérios de apuração</strong></p>
+
+<p>Para cada Indexador/Taxa e seu percentual, da Modalidade apurada:</p>
+
+<ol>
+<li>Identificar clientes com mais de uma ocorrência de evento e calcular a média aritmética  sobre valores cobrados;</li>
+<li>Enfileirar os valores em ordem crescente de grandeza;</li>
+<li>Definir menor (MenorVL) e maior valor (MaiorVL)  relativos aos valores enfileirados em ordem crescente</li>
+<li>Calcular: ( MaiorVL – MenorVL )  /  4 = Intervalo para definição faixas de valores (e se MenorVL = MaiorVL, então 1. (MaiorVL – 0) / 4</li>
+<li>Calcular mediana dos valores em cada faixa</li>
+<li>Calcular o percentual de clientes por faixa ( soma dos valores apurados = 100% )</li>
+</ol>
+
+<p><strong>Exemplos de Uso:</strong></p>
+
+<ul>
+<li>Taxas Remuneratórias – Apuração Frequência e valores correspondentes 1</li>
+</ul>
+
+<p><img class='lazy' src='images/loading-e35b35a4.gif' data-src='images/extras/Exemplo1-Taxas_Remuneratorias-Apuracao_Frequencia_e_valores_correspondentes-b2a225d2.png'/>
+<a href='images/extras/Exemplo1-Taxas_Remuneratorias-Apuracao_Frequencia_e_valores_correspondentes-b2a225d2.png' target="_blank">Download do exemplo</a></p>
+
+<ul>
+<li>Taxas Remuneratórias – Apuração Frequência e valores correspondentes 2</li>
+</ul>
+
+<p><img class='lazy' src='images/loading-e35b35a4.gif' data-src='images/extras/Exemplo2-Taxas_Remuneratorias-Apuracao_Frequencia_e_valores_correspondentes-e2e1a0dd.png'/>
+<a href='images/extras/Exemplo2-Taxas_Remuneratorias-Apuracao_Frequencia_e_valores_correspondentes-e2e1a0dd.png' target="_blank">Download do exemplo</a></p>
+
+<ul>
+<li>Distribuição de Frequência</li>
+</ul>
+
+<p><img class='lazy' src='images/loading-e35b35a4.gif' data-src='images/extras/Exemplo-Distribuicao_de_Frequencia-7aab3c4f.png'/>
+<a href='images/extras/Exemplo-Distribuicao_de_Frequencia-7aab3c4f.png' target="_blank">Download do exemplo</a></p>
+
+<ul>
+<li>Distribuição de Frequência Convenções</li>
+</ul>
+
+<p><img class='lazy' src='images/loading-e35b35a4.gif' data-src='images/extras/Exemplo-Distribuicao_de_Frequencia_Convencoes-34122bde.png'/>
+<a href='images/extras/Exemplo-Distribuicao_de_Frequencia_Convencoes-34122bde.png' target="_blank">Download do exemplo</a></p>
+
+<ul>
+<li>Taxas Remuneratórias – Distribuição de Frequência</li>
+</ul>
+
+<p><img class='lazy' src='images/loading-e35b35a4.gif' data-src='images/extras/Exemplo-Taxas_Remuneratorias-Distribuicao_de_Frequencia-48457430.png'/>
+<a href='images/extras/Exemplo-Taxas_Remuneratorias-Distribuicao_de_Frequencia-48457430.png' target="_blank">Download do exemplo</a></p>
 
 <h1 id="fase-2-apis-do-open-banking-brasil">Fase 2 - APIs do Open Banking Brasil v1.0.0</h1>
 
