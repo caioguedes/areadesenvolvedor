@@ -4281,7 +4281,7 @@ License: <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache 2.0</a></p
   <span class="p">}</span>
 <span class="p">});</span>
 
-<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">https://api.banco.com.br/open-banking/metrics</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">https://api.banco.com.br/open-banking/admin/v1/metrics</span><span class="dl">"</span><span class="p">);</span>
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="dl">"</span><span class="s2">Accept</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">application/json</span><span class="dl">"</span><span class="p">);</span>
 
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
@@ -4291,18 +4291,18 @@ License: <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache 2.0</a></p
 
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span> <span class="s">'Accept'</span><span class="p">:</span> <span class="s">"application/json"</span> <span class="p">}</span>
 
-<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"/open-banking/metrics"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"/open-banking/admin/v1/metrics"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
 
 <span class="n">res</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">))</span>
-</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="nc">HttpResponse</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="nc">Unirest</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"https://api.banco.com.br/open-banking/metrics"</span><span class="o">)</span>
+</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="nc">HttpResponse</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="nc">Unirest</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"https://api.banco.com.br/open-banking/admin/v1/metrics"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"Accept"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">asString</span><span class="o">();</span>
 </code></pre></div>
 
-<p><code>GET /metrics</code></p>
+<p><code>GET /admin/v1/metrics</code></p>
 
 <table><thead>
 <tr>
@@ -4537,7 +4537,7 @@ This operation does not require authentication
   <span class="p">}</span>
 <span class="p">});</span>
 
-<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">https://api.banco.com.br/open-banking/status</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">https://api.banco.com.br/open-banking/discovery/v1/status</span><span class="dl">"</span><span class="p">);</span>
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="dl">"</span><span class="s2">Accept</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">application/json</span><span class="dl">"</span><span class="p">);</span>
 
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
@@ -4547,18 +4547,18 @@ This operation does not require authentication
 
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span> <span class="s">'Accept'</span><span class="p">:</span> <span class="s">"application/json"</span> <span class="p">}</span>
 
-<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"/open-banking/status"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"/open-banking/discovery/v1/status"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
 
 <span class="n">res</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">))</span>
-</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="nc">HttpResponse</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="nc">Unirest</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"https://api.banco.com.br/open-banking/status"</span><span class="o">)</span>
+</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="nc">HttpResponse</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="nc">Unirest</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"https://api.banco.com.br/open-banking/discovery/v1/status"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"Accept"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">asString</span><span class="o">();</span>
 </code></pre></div>
 
-<p><code>GET /status</code></p>
+<p><code>GET /discovery/v1/status</code></p>
 
 <table><thead>
 <tr>
@@ -4681,7 +4681,7 @@ This operation does not require authentication
   <span class="p">}</span>
 <span class="p">});</span>
 
-<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">https://api.banco.com.br/open-banking/outages</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">https://api.banco.com.br/open-banking/discovery/v1/outages</span><span class="dl">"</span><span class="p">);</span>
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="dl">"</span><span class="s2">Accept</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">application/json</span><span class="dl">"</span><span class="p">);</span>
 
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
@@ -4691,18 +4691,18 @@ This operation does not require authentication
 
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span> <span class="s">'Accept'</span><span class="p">:</span> <span class="s">"application/json"</span> <span class="p">}</span>
 
-<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"/open-banking/outages"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"/open-banking/discovery/v1/outages"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
 
 <span class="n">res</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">))</span>
-</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="nc">HttpResponse</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="nc">Unirest</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"https://api.banco.com.br/open-banking/outages"</span><span class="o">)</span>
+</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="nc">HttpResponse</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="nc">Unirest</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"https://api.banco.com.br/open-banking/discovery/v1/outages"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"Accept"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">asString</span><span class="o">();</span>
 </code></pre></div>
 
-<p><code>GET /outages</code></p>
+<p><code>GET /discovery/v1/outages</code></p>
 
 <table><thead>
 <tr>
@@ -4821,7 +4821,7 @@ This operation does not require authentication
   <span class="p">}</span>
 <span class="p">});</span>
 
-<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">https://api.banco.com.br/open-banking/banking-agents</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">https://api.banco.com.br/open-banking/channels/v1/banking-agents</span><span class="dl">"</span><span class="p">);</span>
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="dl">"</span><span class="s2">Accept</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">application/json</span><span class="dl">"</span><span class="p">);</span>
 
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
@@ -4831,18 +4831,18 @@ This operation does not require authentication
 
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span> <span class="s">'Accept'</span><span class="p">:</span> <span class="s">"application/json"</span> <span class="p">}</span>
 
-<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"/open-banking/banking-agents"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"/open-banking/channels/v1/banking-agents"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
 
 <span class="n">res</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">))</span>
-</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="nc">HttpResponse</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="nc">Unirest</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"https://api.banco.com.br/open-banking/banking-agents"</span><span class="o">)</span>
+</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="nc">HttpResponse</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="nc">Unirest</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"https://api.banco.com.br/open-banking/channels/v1/banking-agents"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"Accept"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">asString</span><span class="o">();</span>
 </code></pre></div>
 
-<p><code>GET /banking-agents</code></p>
+<p><code>GET /channels/v1/banking-agents</code></p>
 
 <table><thead>
 <tr>
@@ -5173,7 +5173,7 @@ This operation does not require authentication
   <span class="p">}</span>
 <span class="p">});</span>
 
-<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">https://api.banco.com.br/open-banking/branches</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">https://api.banco.com.br/open-banking/channels/v1/branches</span><span class="dl">"</span><span class="p">);</span>
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="dl">"</span><span class="s2">Accept</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">application/json</span><span class="dl">"</span><span class="p">);</span>
 
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
@@ -5183,18 +5183,18 @@ This operation does not require authentication
 
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span> <span class="s">'Accept'</span><span class="p">:</span> <span class="s">"application/json"</span> <span class="p">}</span>
 
-<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"/open-banking/branches"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"/open-banking/channels/v1/branches"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
 
 <span class="n">res</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">))</span>
-</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="nc">HttpResponse</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="nc">Unirest</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"https://api.banco.com.br/open-banking/branches"</span><span class="o">)</span>
+</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="nc">HttpResponse</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="nc">Unirest</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"https://api.banco.com.br/open-banking/channels/v1/branches"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"Accept"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">asString</span><span class="o">();</span>
 </code></pre></div>
 
-<p><code>GET /branches</code></p>
+<p><code>GET /channels/v1/branches</code></p>
 
 <table><thead>
 <tr>
@@ -5410,7 +5410,7 @@ This operation does not require authentication
   <span class="p">}</span>
 <span class="p">});</span>
 
-<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">https://api.banco.com.br/open-banking/electronic-channels</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">https://api.banco.com.br/open-banking/channels/v1/electronic-channels</span><span class="dl">"</span><span class="p">);</span>
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="dl">"</span><span class="s2">Accept</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">application/json</span><span class="dl">"</span><span class="p">);</span>
 
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
@@ -5420,18 +5420,18 @@ This operation does not require authentication
 
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span> <span class="s">'Accept'</span><span class="p">:</span> <span class="s">"application/json"</span> <span class="p">}</span>
 
-<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"/open-banking/electronic-channels"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"/open-banking/channels/v1/electronic-channels"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
 
 <span class="n">res</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">))</span>
-</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="nc">HttpResponse</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="nc">Unirest</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"https://api.banco.com.br/open-banking/electronic-channels"</span><span class="o">)</span>
+</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="nc">HttpResponse</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="nc">Unirest</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"https://api.banco.com.br/open-banking/channels/v1/electronic-channels"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"Accept"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">asString</span><span class="o">();</span>
 </code></pre></div>
 
-<p><code>GET /electronic-channels</code></p>
+<p><code>GET /channels/v1/electronic-channels</code></p>
 
 <table><thead>
 <tr>
@@ -5587,7 +5587,7 @@ This operation does not require authentication
   <span class="p">}</span>
 <span class="p">});</span>
 
-<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">https://api.banco.com.br/open-banking/phone-channels</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">https://api.banco.com.br/open-banking/channels/v1/phone-channels</span><span class="dl">"</span><span class="p">);</span>
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="dl">"</span><span class="s2">Accept</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">application/json</span><span class="dl">"</span><span class="p">);</span>
 
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
@@ -5597,18 +5597,18 @@ This operation does not require authentication
 
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span> <span class="s">'Accept'</span><span class="p">:</span> <span class="s">"application/json"</span> <span class="p">}</span>
 
-<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"/open-banking/phone-channels"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"/open-banking/channels/v1/phone-channels"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
 
 <span class="n">res</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">))</span>
-</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="nc">HttpResponse</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="nc">Unirest</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"https://api.banco.com.br/open-banking/phone-channels"</span><span class="o">)</span>
+</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="nc">HttpResponse</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="nc">Unirest</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"https://api.banco.com.br/open-banking/channels/v1/phone-channels"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"Accept"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">asString</span><span class="o">();</span>
 </code></pre></div>
 
-<p><code>GET /phone-channels</code></p>
+<p><code>GET /channels/v1/phone-channels</code></p>
 
 <table><thead>
 <tr>
@@ -5878,7 +5878,7 @@ This operation does not require authentication
   <span class="p">}</span>
 <span class="p">});</span>
 
-<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">https://api.banco.com.br/open-banking/shared-automated-teller-machines</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">https://api.banco.com.br/open-banking/channels/v1/shared-automated-teller-machines</span><span class="dl">"</span><span class="p">);</span>
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="dl">"</span><span class="s2">Accept</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">application/json</span><span class="dl">"</span><span class="p">);</span>
 
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
@@ -5888,18 +5888,18 @@ This operation does not require authentication
 
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span> <span class="s">'Accept'</span><span class="p">:</span> <span class="s">"application/json"</span> <span class="p">}</span>
 
-<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"/open-banking/shared-automated-teller-machines"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"/open-banking/channels/v1/shared-automated-teller-machines"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
 
 <span class="n">res</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">))</span>
-</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="nc">HttpResponse</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="nc">Unirest</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"https://api.banco.com.br/open-banking/shared-automated-teller-machines"</span><span class="o">)</span>
+</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="nc">HttpResponse</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="nc">Unirest</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"https://api.banco.com.br/open-banking/channels/v1/shared-automated-teller-machines"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"Accept"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">asString</span><span class="o">();</span>
 </code></pre></div>
 
-<p><code>GET /shared-automated-teller-machines</code></p>
+<p><code>GET /channels/v1/shared-automated-teller-machines</code></p>
 
 <table><thead>
 <tr>
@@ -6072,7 +6072,7 @@ This operation does not require authentication
   <span class="p">}</span>
 <span class="p">});</span>
 
-<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">https://api.banco.com.br/open-banking/personal-accounts</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">https://api.banco.com.br/open-banking/products-services/v1/personal-accounts</span><span class="dl">"</span><span class="p">);</span>
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="dl">"</span><span class="s2">Accept</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">application/json</span><span class="dl">"</span><span class="p">);</span>
 
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
@@ -6082,18 +6082,18 @@ This operation does not require authentication
 
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span> <span class="s">'Accept'</span><span class="p">:</span> <span class="s">"application/json"</span> <span class="p">}</span>
 
-<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"/open-banking/personal-accounts"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"/open-banking/products-services/v1/personal-accounts"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
 
 <span class="n">res</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">))</span>
-</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="nc">HttpResponse</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="nc">Unirest</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"https://api.banco.com.br/open-banking/personal-accounts"</span><span class="o">)</span>
+</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="nc">HttpResponse</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="nc">Unirest</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"https://api.banco.com.br/open-banking/products-services/v1/personal-accounts"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"Accept"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">asString</span><span class="o">();</span>
 </code></pre></div>
 
-<p><code>GET /personal-accounts</code></p>
+<p><code>GET /products-services/v1/personal-accounts</code></p>
 
 <table><thead>
 <tr>
@@ -6294,7 +6294,7 @@ This operation does not require authentication
   <span class="p">}</span>
 <span class="p">});</span>
 
-<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">https://api.banco.com.br/open-banking/business-accounts</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">https://api.banco.com.br/open-banking/products-services/v1/business-accounts</span><span class="dl">"</span><span class="p">);</span>
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="dl">"</span><span class="s2">Accept</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">application/json</span><span class="dl">"</span><span class="p">);</span>
 
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
@@ -6304,18 +6304,18 @@ This operation does not require authentication
 
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span> <span class="s">'Accept'</span><span class="p">:</span> <span class="s">"application/json"</span> <span class="p">}</span>
 
-<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"/open-banking/business-accounts"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"/open-banking/products-services/v1/business-accounts"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
 
 <span class="n">res</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">))</span>
-</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="nc">HttpResponse</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="nc">Unirest</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"https://api.banco.com.br/open-banking/business-accounts"</span><span class="o">)</span>
+</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="nc">HttpResponse</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="nc">Unirest</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"https://api.banco.com.br/open-banking/products-services/v1/business-accounts"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"Accept"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">asString</span><span class="o">();</span>
 </code></pre></div>
 
-<p><code>GET /business-accounts</code></p>
+<p><code>GET /products-services/v1/business-accounts</code></p>
 
 <table><thead>
 <tr>
@@ -6506,7 +6506,7 @@ This operation does not require authentication
   <span class="p">}</span>
 <span class="p">});</span>
 
-<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">https://api.banco.com.br/open-banking/personal-loans</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">https://api.banco.com.br/open-banking/products-services/v1/personal-loans</span><span class="dl">"</span><span class="p">);</span>
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="dl">"</span><span class="s2">Accept</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">application/json</span><span class="dl">"</span><span class="p">);</span>
 
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
@@ -6516,20 +6516,48 @@ This operation does not require authentication
 
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span> <span class="s">'Accept'</span><span class="p">:</span> <span class="s">"application/json"</span> <span class="p">}</span>
 
-<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"/open-banking/personal-loans"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"/open-banking/products-services/v1/personal-loans"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
 
 <span class="n">res</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">))</span>
-</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="nc">HttpResponse</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="nc">Unirest</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"https://api.banco.com.br/open-banking/personal-loans"</span><span class="o">)</span>
+</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="nc">HttpResponse</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="nc">Unirest</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"https://api.banco.com.br/open-banking/products-services/v1/personal-loans"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"Accept"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">asString</span><span class="o">();</span>
 </code></pre></div>
 
-<p><code>GET /personal-loans</code></p>
+<p><code>GET /products-services/v1/personal-loans</code></p>
 
-<p>Obtém dados sobre empréstimos pessoa natural</p>
+<table><thead>
+<tr>
+<th>Versão</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>1</td>
+</tr>
+</tbody></table>
+
+<h3 id='visao-geral-11'>Visão geral</h3>
+
+<p>Obtém os dados de Empréstimos para pessoa natural.</p>
+
+<p>Esta especificação inclui todos os itens relevantes para a Especificação de API de Empréstimos para pessoa natural de dados abertos.</p>
+
+<p>Tags: <a href="#glossarioCNPJ">CNPJ (CNPJ Number)</a>, <a href="#glossarioMarca">Marca (Brand)</a>, <a href="#glossarioCreditoRotativo">Crédito Rotativo (Overdraft)</a>, <a href="#glossarioEmprestimo">Empréstimo (Loan)</a>, <a href="#glossarioInstituicaoFinanceira">Instituição Financeira (Company)</a>, <a href="#glossarioTaxaReferencial">Taxa Referencial – TR (Referential Rate)</a>, <a href="#glossarioIndexador">Indexador (Indexer)</a> e <a href="#api-canais-de-atendimento-divulgacao-dos-valores-de-tarifas-e-taxas-de-juros-remuneratorias">Divulgação dos valores de tarifas e taxas de juros remuneratórias (Disclosure of Fees and Interest Rates)</a>.</p>
+
+<h3 id='visao-de-alto-de-nivel-das-estruturas-de-dados-6'>Visão de alto de nível das estruturas de dados</h3>
+
+<p><img class='lazy' src='images/loading-e35b35a4.gif' data-src='images/tld/TLD_Personal_Loans_v1-360d6969.png'/></p>
+
+<h3 id='dicionario-de-dados-8'>Dicionário de dados</h3>
+
+<p><a href='dictionary/personal_loans.csv' target="_blank">Fazer download do dicionário de dados</a></p>
+
+<h3 id='especificacao-em-oas-3-0-11'>Especificação em OAS 3.0</h3>
+
+<p><a href='swagger/swagger_products_services_apis.yaml'>Download da Especificação (OAS 3.0)</a></p>
 
 <h3 id="obtém-dados-sobre-empréstimos-pessoa-natural-parameters">Parâmetros</h3>
 
@@ -6667,7 +6695,7 @@ This operation does not require authentication
   <span class="p">}</span>
 <span class="p">});</span>
 
-<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">https://api.banco.com.br/open-banking/business-loans</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">https://api.banco.com.br/open-banking/products-services/v1/business-loans</span><span class="dl">"</span><span class="p">);</span>
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="dl">"</span><span class="s2">Accept</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">application/json</span><span class="dl">"</span><span class="p">);</span>
 
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
@@ -6677,18 +6705,18 @@ This operation does not require authentication
 
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span> <span class="s">'Accept'</span><span class="p">:</span> <span class="s">"application/json"</span> <span class="p">}</span>
 
-<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"/open-banking/business-loans"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"/open-banking/products-services/v1/business-loans"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
 
 <span class="n">res</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">))</span>
-</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="nc">HttpResponse</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="nc">Unirest</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"https://api.banco.com.br/open-banking/business-loans"</span><span class="o">)</span>
+</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="nc">HttpResponse</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="nc">Unirest</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"https://api.banco.com.br/open-banking/products-services/v1/business-loans"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"Accept"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">asString</span><span class="o">();</span>
 </code></pre></div>
 
-<p><code>GET /business-loans</code></p>
+<p><code>GET /products-services/v1/business-loans</code></p>
 
 <table><thead>
 <tr>
@@ -6700,23 +6728,23 @@ This operation does not require authentication
 </tr>
 </tbody></table>
 
-<h3 id='visao-geral-11'>Visão geral</h3>
+<h3 id='visao-geral-12'>Visão geral</h3>
 
-<p>Obtém os dados de Empréstimos para pessoa natural.</p>
+<p>Obtém os dados de Empréstimos para pessoa jurídica.</p>
 
 <p>Esta especificação inclui todos os itens relevantes para a Especificação de API de Empréstimos para pessoa natural de dados abertos.</p>
 
 <p>Tags: <a href="#glossarioCNPJ">CNPJ (CNPJ Number)</a>, <a href="#glossarioMarca">Marca (Brand)</a>, <a href="#glossarioCreditoRotativo">Crédito Rotativo (Overdraft)</a>, <a href="#glossarioEmprestimo">Empréstimo (Loan)</a>, <a href="#glossarioInstituicaoFinanceira">Instituição Financeira (Company)</a>, <a href="#glossarioTaxaReferencial">Taxa Referencial – TR (Referential Rate)</a>, <a href="#glossarioIndexador">Indexador (Indexer)</a> e <a href="#api-canais-de-atendimento-divulgacao-dos-valores-de-tarifas-e-taxas-de-juros-remuneratorias">Divulgação dos valores de tarifas e taxas de juros remuneratórias (Disclosure of Fees and Interest Rates)</a>.</p>
 
-<h3 id='visao-de-alto-de-nivel-das-estruturas-de-dados-6'>Visão de alto de nível das estruturas de dados</h3>
+<h3 id='visao-de-alto-de-nivel-das-estruturas-de-dados-7'>Visão de alto de nível das estruturas de dados</h3>
 
-<p><img class='lazy' src='images/loading-e35b35a4.gif' data-src='images/tld/TLD_Personal_Loans_v1-360d6969.png'/></p>
+<p><img class='lazy' src='images/loading-e35b35a4.gif' data-src='images/tld/TLD_Business_Loans_v1-aa09f676.png'/></p>
 
-<h3 id='dicionario-de-dados-8'>Dicionário de dados</h3>
+<h3 id='dicionario-de-dados-9'>Dicionário de dados</h3>
 
-<p><a href='dictionary/personal_loans.csv' target="_blank">Fazer download do dicionário de dados</a></p>
+<p><a href='dictionary/business_loans.csv' target="_blank">Fazer download do dicionário de dados</a></p>
 
-<h3 id='especificacao-em-oas-3-0-11'>Especificação em OAS 3.0</h3>
+<h3 id='especificacao-em-oas-3-0-12'>Especificação em OAS 3.0</h3>
 
 <p><a href='swagger/swagger_products_services_apis.yaml'>Download da Especificação (OAS 3.0)</a></p>
 
@@ -6856,7 +6884,7 @@ This operation does not require authentication
   <span class="p">}</span>
 <span class="p">});</span>
 
-<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">https://api.banco.com.br/open-banking/personal-credit-cards</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">https://api.banco.com.br/open-banking/products-services/v1/personal-credit-cards</span><span class="dl">"</span><span class="p">);</span>
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="dl">"</span><span class="s2">Accept</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">application/json</span><span class="dl">"</span><span class="p">);</span>
 
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
@@ -6866,18 +6894,18 @@ This operation does not require authentication
 
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span> <span class="s">'Accept'</span><span class="p">:</span> <span class="s">"application/json"</span> <span class="p">}</span>
 
-<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"/open-banking/personal-credit-cards"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"/open-banking/products-services/v1/personal-credit-cards"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
 
 <span class="n">res</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">))</span>
-</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="nc">HttpResponse</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="nc">Unirest</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"https://api.banco.com.br/open-banking/personal-credit-cards"</span><span class="o">)</span>
+</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="nc">HttpResponse</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="nc">Unirest</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"https://api.banco.com.br/open-banking/products-services/v1/personal-credit-cards"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"Accept"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">asString</span><span class="o">();</span>
 </code></pre></div>
 
-<p><code>GET /personal-credit-cards</code></p>
+<p><code>GET /products-services/v1/personal-credit-cards</code></p>
 
 <table><thead>
 <tr>
@@ -6889,7 +6917,7 @@ This operation does not require authentication
 </tr>
 </tbody></table>
 
-<h3 id='visao-geral-12'>Visão geral</h3>
+<h3 id='visao-geral-13'>Visão geral</h3>
 
 <p>Obtém os dados de produtos e serviços de cartões de crédito para pessoa natural.</p>
 
@@ -6899,11 +6927,11 @@ This operation does not require authentication
 
 <p><img class='lazy' src='images/loading-e35b35a4.gif' data-src='images/tld/TLD_Personal_Credit_Cards_v1-b6da1fe5.png'/></p>
 
-<h3 id='dicionario-de-dados-9'>Dicionário de dados</h3>
+<h3 id='dicionario-de-dados-10'>Dicionário de dados</h3>
 
 <p><a href='dictionary/personal_credit_cards.csv' target="_blank">Fazer download do dicionário de dados</a></p>
 
-<h3 id='especificacao-em-oas-3-0-12'>Especificação em OAS 3.0</h3>
+<h3 id='especificacao-em-oas-3-0-13'>Especificação em OAS 3.0</h3>
 
 <p><a href='swagger/swagger_products_services_apis.yaml'>Download da Especificação (OAS 3.0)</a></p>
 
@@ -7071,7 +7099,7 @@ This operation does not require authentication
   <span class="p">}</span>
 <span class="p">});</span>
 
-<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">https://api.banco.com.br/open-banking/business-credit-cards</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">https://api.banco.com.br/open-banking/products-services/v1/business-credit-cards</span><span class="dl">"</span><span class="p">);</span>
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="dl">"</span><span class="s2">Accept</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">application/json</span><span class="dl">"</span><span class="p">);</span>
 
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
@@ -7081,18 +7109,18 @@ This operation does not require authentication
 
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span> <span class="s">'Accept'</span><span class="p">:</span> <span class="s">"application/json"</span> <span class="p">}</span>
 
-<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"/open-banking/business-credit-cards"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"/open-banking/products-services/v1/business-credit-cards"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
 
 <span class="n">res</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">))</span>
-</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="nc">HttpResponse</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="nc">Unirest</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"https://api.banco.com.br/open-banking/business-credit-cards"</span><span class="o">)</span>
+</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="nc">HttpResponse</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="nc">Unirest</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"https://api.banco.com.br/open-banking/products-services/v1/business-credit-cards"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"Accept"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">asString</span><span class="o">();</span>
 </code></pre></div>
 
-<p><code>GET /business-credit-cards</code></p>
+<p><code>GET /products-services/v1/business-credit-cards</code></p>
 
 <table><thead>
 <tr>
@@ -7104,7 +7132,7 @@ This operation does not require authentication
 </tr>
 </tbody></table>
 
-<h3 id='visao-geral-13'>Visão geral</h3>
+<h3 id='visao-geral-14'>Visão geral</h3>
 
 <p>Obtém os dados de produtos e serviços de cartões de crédito para pessoa jurídica.</p>
 
@@ -7114,11 +7142,11 @@ This operation does not require authentication
 
 <p><img class='lazy' src='images/loading-e35b35a4.gif' data-src='images/tld/TLD_Business_Credit_Cards_v1-55fea9ed.png'/></p>
 
-<h3 id='dicionario-de-dados-10'>Dicionário de dados</h3>
+<h3 id='dicionario-de-dados-11'>Dicionário de dados</h3>
 
 <p><a href='dictionary/business_credit_cards.csv' target="_blank">Fazer download do dicionário de dados</a></p>
 
-<h3 id='especificacao-em-oas-3-0-13'>Especificação em OAS 3.0</h3>
+<h3 id='especificacao-em-oas-3-0-14'>Especificação em OAS 3.0</h3>
 
 <p><a href='swagger/swagger_products_services_apis.yaml'>Download da Especificação (OAS 3.0)</a></p>
 
@@ -7286,7 +7314,7 @@ This operation does not require authentication
   <span class="p">}</span>
 <span class="p">});</span>
 
-<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">https://api.banco.com.br/open-banking/personal-financings</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">https://api.banco.com.br/open-banking/products-services/v1/personal-financings</span><span class="dl">"</span><span class="p">);</span>
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="dl">"</span><span class="s2">Accept</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">application/json</span><span class="dl">"</span><span class="p">);</span>
 
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
@@ -7296,18 +7324,18 @@ This operation does not require authentication
 
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span> <span class="s">'Accept'</span><span class="p">:</span> <span class="s">"application/json"</span> <span class="p">}</span>
 
-<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"/open-banking/personal-financings"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"/open-banking/products-services/v1/personal-financings"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
 
 <span class="n">res</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">))</span>
-</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="nc">HttpResponse</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="nc">Unirest</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"https://api.banco.com.br/open-banking/personal-financings"</span><span class="o">)</span>
+</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="nc">HttpResponse</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="nc">Unirest</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"https://api.banco.com.br/open-banking/products-services/v1/personal-financings"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"Accept"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">asString</span><span class="o">();</span>
 </code></pre></div>
 
-<p><code>GET /personal-financings</code></p>
+<p><code>GET /products-services/v1/personal-financings</code></p>
 
 <table><thead>
 <tr>
@@ -7319,7 +7347,7 @@ This operation does not require authentication
 </tr>
 </tbody></table>
 
-<h3 id='visao-geral-14'>Visão geral</h3>
+<h3 id='visao-geral-15'>Visão geral</h3>
 
 <p>Obtém os dados de Financiamento para pessoa natural.</p>
 
@@ -7331,11 +7359,11 @@ This operation does not require authentication
 
 <p><img class='lazy' src='images/loading-e35b35a4.gif' data-src='images/tld/TLD_Personal_Financings_v1-27f3dbf4.png'/></p>
 
-<h3 id='dicionario-de-dados-11'>Dicionário de dados</h3>
+<h3 id='dicionario-de-dados-12'>Dicionário de dados</h3>
 
 <p><a href='dictionary/personal_financings.csv' target="_blank">Fazer download do dicionário de dados</a></p>
 
-<h3 id='especificacao-em-oas-3-0-14'>Especificação em OAS 3.0</h3>
+<h3 id='especificacao-em-oas-3-0-15'>Especificação em OAS 3.0</h3>
 
 <p><a href='swagger/swagger_products_services_apis.yaml'>Download da Especificação (OAS 3.0)</a></p>
 
@@ -7475,7 +7503,7 @@ This operation does not require authentication
   <span class="p">}</span>
 <span class="p">});</span>
 
-<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">https://api.banco.com.br/open-banking/business-financings</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">https://api.banco.com.br/open-banking/products-services/v1/business-financings</span><span class="dl">"</span><span class="p">);</span>
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="dl">"</span><span class="s2">Accept</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">application/json</span><span class="dl">"</span><span class="p">);</span>
 
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
@@ -7485,18 +7513,18 @@ This operation does not require authentication
 
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span> <span class="s">'Accept'</span><span class="p">:</span> <span class="s">"application/json"</span> <span class="p">}</span>
 
-<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"/open-banking/business-financings"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"/open-banking/products-services/v1/business-financings"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
 
 <span class="n">res</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">))</span>
-</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="nc">HttpResponse</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="nc">Unirest</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"https://api.banco.com.br/open-banking/business-financings"</span><span class="o">)</span>
+</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="nc">HttpResponse</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="nc">Unirest</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"https://api.banco.com.br/open-banking/products-services/v1/business-financings"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"Accept"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">asString</span><span class="o">();</span>
 </code></pre></div>
 
-<p><code>GET /business-financings</code></p>
+<p><code>GET /products-services/v1/business-financings</code></p>
 
 <table><thead>
 <tr>
@@ -7508,7 +7536,7 @@ This operation does not require authentication
 </tr>
 </tbody></table>
 
-<h3 id='visao-geral-15'>Visão geral</h3>
+<h3 id='visao-geral-16'>Visão geral</h3>
 
 <p>Obtém os dados de Financiamento para pessoa jurídica.</p>
 
@@ -7520,11 +7548,11 @@ This operation does not require authentication
 
 <p><img class='lazy' src='images/loading-e35b35a4.gif' data-src='images/tld/TLD_Business_Financings_v1-ab961edd.png'/></p>
 
-<h3 id='dicionario-de-dados-12'>Dicionário de dados</h3>
+<h3 id='dicionario-de-dados-13'>Dicionário de dados</h3>
 
 <p><a href='dictionary/business_financings.csv' target="_blank">Fazer download do dicionário de dados</a></p>
 
-<h3 id='especificacao-em-oas-3-0-15'>Especificação em OAS 3.0</h3>
+<h3 id='especificacao-em-oas-3-0-16'>Especificação em OAS 3.0</h3>
 
 <p><a href='swagger/swagger_products_services_apis.yaml'>Download da Especificação (OAS 3.0)</a></p>
 
@@ -7664,7 +7692,7 @@ This operation does not require authentication
   <span class="p">}</span>
 <span class="p">});</span>
 
-<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">https://api.banco.com.br/open-banking/personal-invoice-financings</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">https://api.banco.com.br/open-banking/products-services/v1/personal-invoice-financings</span><span class="dl">"</span><span class="p">);</span>
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="dl">"</span><span class="s2">Accept</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">application/json</span><span class="dl">"</span><span class="p">);</span>
 
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
@@ -7674,20 +7702,48 @@ This operation does not require authentication
 
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span> <span class="s">'Accept'</span><span class="p">:</span> <span class="s">"application/json"</span> <span class="p">}</span>
 
-<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"/open-banking/personal-invoice-financings"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"/open-banking/products-services/v1/personal-invoice-financings"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
 
 <span class="n">res</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">))</span>
-</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="nc">HttpResponse</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="nc">Unirest</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"https://api.banco.com.br/open-banking/personal-invoice-financings"</span><span class="o">)</span>
+</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="nc">HttpResponse</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="nc">Unirest</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"https://api.banco.com.br/open-banking/products-services/v1/personal-invoice-financings"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"Accept"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">asString</span><span class="o">();</span>
 </code></pre></div>
 
-<p><code>GET /personal-invoice-financings</code></p>
+<p><code>GET /products-services/v1/personal-invoice-financings</code></p>
+
+<table><thead>
+<tr>
+<th>Versão</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>1</td>
+</tr>
+</tbody></table>
+
+<h3 id='visao-geral-17'>Visão geral</h3>
 
 <p>Obtém a lista de Adiantamento de Recebíveis de Pessoa Natural.</p>
+
+<p>Esta especificação inclui todos os itens relevantes para a Especificação de API de Antecipação de Recebíveis para pessoa natural de dados abertos.</p>
+
+<p>Tags: <a href="#glossarioCNPJ">CNPJ (CNPJ Number)</a>, <a href="#glossarioMarca">Marca (Brand)</a>, <a href="#glossarioDireitoCreditorioDescontado">Direito Creditório Descontado (Invoice Financing)</a>, <a href="#glossarioInstituicaoFinanceira">Instituição Financeira (Company)</a>, <a href="#glossarioTaxaReferencial">Taxa Referencial – TR (Referential Rate)</a>, <a href="#glossarioIndexador">Indexador (Indexer)</a> e <a href="#api-canais-de-atendimento-divulgacao-dos-valores-de-tarifas-e-taxas-de-juros-remuneratorias">Divulgação dos valores de tarifas e taxas de juros remuneratórias (Disclosure of Fees and Interest Rates)</a>.</p>
+
+<h3 id='visao-de-alto-nivel-das-estruturas-de-dados-7'>Visão de alto nível das estruturas de dados</h3>
+
+<p><img class='lazy' src='images/loading-e35b35a4.gif' data-src='images/tld/TLD_Personal_Invoice_Financing_v1-0ad5b8b5.png'/></p>
+
+<h3 id='dicionario-de-dados-14'>Dicionário de dados</h3>
+
+<p><a href='dictionary/personal_invoice_financings.csv' target="_blank">Fazer download do dicionário de dados</a></p>
+
+<h3 id='especificacao-em-oas-3-0-17'>Especificação em OAS 3.0</h3>
+
+<p><a href='swagger/swagger_products_services_apis.yaml'>Download da Especificação (OAS 3.0)</a></p>
 
 <h3 id="obtém-a-lista-de-adiantamento-de-recebíveis-de-pessoa-natural.-parameters">Parâmetros</h3>
 
@@ -7825,7 +7881,7 @@ This operation does not require authentication
   <span class="p">}</span>
 <span class="p">});</span>
 
-<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">https://api.banco.com.br/open-banking/business-invoice-financings</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">https://api.banco.com.br/open-banking/products-services/v1/business-invoice-financings</span><span class="dl">"</span><span class="p">);</span>
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="dl">"</span><span class="s2">Accept</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">application/json</span><span class="dl">"</span><span class="p">);</span>
 
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
@@ -7835,18 +7891,18 @@ This operation does not require authentication
 
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span> <span class="s">'Accept'</span><span class="p">:</span> <span class="s">"application/json"</span> <span class="p">}</span>
 
-<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"/open-banking/business-invoice-financings"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"/open-banking/products-services/v1/business-invoice-financings"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
 
 <span class="n">res</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">))</span>
-</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="nc">HttpResponse</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="nc">Unirest</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"https://api.banco.com.br/open-banking/business-invoice-financings"</span><span class="o">)</span>
+</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="nc">HttpResponse</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="nc">Unirest</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"https://api.banco.com.br/open-banking/products-services/v1/business-invoice-financings"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"Accept"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">asString</span><span class="o">();</span>
 </code></pre></div>
 
-<p><code>GET /business-invoice-financings</code></p>
+<p><code>GET /products-services/v1/business-invoice-financings</code></p>
 
 <table><thead>
 <tr>
@@ -7858,23 +7914,23 @@ This operation does not require authentication
 </tr>
 </tbody></table>
 
-<h3 id='visao-geral-16'>Visão geral</h3>
+<h3 id='visao-geral-18'>Visão geral</h3>
 
-<p>Obtém os dados de Antecipação de Recebíveis.</p>
+<p>Obtém a lista de Adiantamento de Recebíveis de Pessoa Jurídica.</p>
 
 <p>Esta especificação inclui todos os itens relevantes para a Especificação de API de Antecipação de Recebíveis para pessoa natural de dados abertos.</p>
 
 <p>Tags: <a href="#glossarioCNPJ">CNPJ (CNPJ Number)</a>, <a href="#glossarioMarca">Marca (Brand)</a>, <a href="#glossarioDireitoCreditorioDescontado">Direito Creditório Descontado (Invoice Financing)</a>, <a href="#glossarioInstituicaoFinanceira">Instituição Financeira (Company)</a>, <a href="#glossarioTaxaReferencial">Taxa Referencial – TR (Referential Rate)</a>, <a href="#glossarioIndexador">Indexador (Indexer)</a> e <a href="#api-canais-de-atendimento-divulgacao-dos-valores-de-tarifas-e-taxas-de-juros-remuneratorias">Divulgação dos valores de tarifas e taxas de juros remuneratórias (Disclosure of Fees and Interest Rates)</a>.</p>
 
-<h3 id='visao-de-alto-nivel-das-estruturas-de-dados-7'>Visão de alto nível das estruturas de dados</h3>
+<h3 id='visao-de-alto-nivel-das-estruturas-de-dados-8'>Visão de alto nível das estruturas de dados</h3>
 
-<p><img class='lazy' src='images/loading-e35b35a4.gif' data-src='images/tld/TLD_Personal_Invoice_Financing_v1-0ad5b8b5.png'/></p>
+<p><img class='lazy' src='images/loading-e35b35a4.gif' data-src='images/tld/TLD_Business_Invoice_Financing_v1-4664027a.png'/></p>
 
-<h3 id='dicionario-de-dados-13'>Dicionário de dados</h3>
+<h3 id='dicionario-de-dados-15'>Dicionário de dados</h3>
 
-<p><a href='dictionary/personal_invoice_financings.csv' target="_blank">Fazer download do dicionário de dados</a></p>
+<p><a href='dictionary/business_invoice_financings.csv' target="_blank">Fazer download do dicionário de dados</a></p>
 
-<h3 id='especificacao-em-oas-3-0-16'>Especificação em OAS 3.0</h3>
+<h3 id='especificacao-em-oas-3-0-18'>Especificação em OAS 3.0</h3>
 
 <p><a href='swagger/swagger_products_services_apis.yaml'>Download da Especificação (OAS 3.0)</a></p>
 
@@ -8014,7 +8070,7 @@ This operation does not require authentication
   <span class="p">}</span>
 <span class="p">});</span>
 
-<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">https://api.banco.com.br/open-banking/personal-unarranged-account-overdraft</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">https://api.banco.com.br/open-banking/products-services/v1/personal-unarranged-account-overdraft</span><span class="dl">"</span><span class="p">);</span>
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="dl">"</span><span class="s2">Accept</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">application/json</span><span class="dl">"</span><span class="p">);</span>
 
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
@@ -8024,18 +8080,18 @@ This operation does not require authentication
 
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span> <span class="s">'Accept'</span><span class="p">:</span> <span class="s">"application/json"</span> <span class="p">}</span>
 
-<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"/open-banking/personal-unarranged-account-overdraft"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"/open-banking/products-services/v1/personal-unarranged-account-overdraft"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
 
 <span class="n">res</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">))</span>
-</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="nc">HttpResponse</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="nc">Unirest</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"https://api.banco.com.br/open-banking/personal-unarranged-account-overdraft"</span><span class="o">)</span>
+</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="nc">HttpResponse</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="nc">Unirest</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"https://api.banco.com.br/open-banking/products-services/v1/personal-unarranged-account-overdraft"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"Accept"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">asString</span><span class="o">();</span>
 </code></pre></div>
 
-<p><code>GET /personal-unarranged-account-overdraft</code></p>
+<p><code>GET /products-services/v1/personal-unarranged-account-overdraft</code></p>
 
 <table><thead>
 <tr>
@@ -8047,7 +8103,7 @@ This operation does not require authentication
 </tr>
 </tbody></table>
 
-<h3 id='visao-geral-17'>Visão geral</h3>
+<h3 id='visao-geral-19'>Visão geral</h3>
 
 <p>Obtém os dados de Adiantamento a Depositante para pessoa natural.</p>
 
@@ -8055,15 +8111,15 @@ This operation does not require authentication
 
 <p>Tags: <a href="#glossarioCNPJ">CNPJ (CNPJ Number)</a>, <a href="#glossarioMarca">Marca (Brand)</a>, <a href="#glossarioInstituicaoFinanceira">Instituição Financeira (Company)</a>, <a href="#glossarioTaxaReferencial">Taxa Referencial – TR (Referential Rate)</a>, <a href="#glossarioIndexador">Indexador (Indexer)</a> e <a href="#api-canais-de-atendimento-divulgacao-dos-valores-de-tarifas-e-taxas-de-juros-remuneratorias">Divulgação dos valores de tarifas e taxas de juros remuneratórias (Disclosure of Fees and Interest Rates)</a>.</p>
 
-<h3 id='visao-de-alto-de-nivel-das-estruturas-de-dados-7'>Visão de alto de nível das estruturas de dados</h3>
+<h3 id='visao-de-alto-de-nivel-das-estruturas-de-dados-8'>Visão de alto de nível das estruturas de dados</h3>
 
 <p><img class='lazy' src='images/loading-e35b35a4.gif' data-src='images/tld/TLD_Personal_Unarranged_Account_Overdraft_v1-58f63d70.png'/></p>
 
-<h3 id='dicionario-de-dados-14'>Dicionário de dados</h3>
+<h3 id='dicionario-de-dados-16'>Dicionário de dados</h3>
 
 <p><a href='dictionary/personal_unarranged_account_overdraft.csv' target="_blank">Fazer download do dicionário de dados</a></p>
 
-<h3 id='especificacao-em-oas-3-0-17'>Especificação em OAS 3.0</h3>
+<h3 id='especificacao-em-oas-3-0-19'>Especificação em OAS 3.0</h3>
 
 <p><a href='swagger/swagger_products_services_apis.yaml'>Download da Especificação (OAS 3.0)</a></p>
 
@@ -8199,7 +8255,7 @@ This operation does not require authentication
   <span class="p">}</span>
 <span class="p">});</span>
 
-<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">https://api.banco.com.br/open-banking/business-unarranged-account-overdraft</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">https://api.banco.com.br/open-banking/products-services/v1/business-unarranged-account-overdraft</span><span class="dl">"</span><span class="p">);</span>
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="dl">"</span><span class="s2">Accept</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">application/json</span><span class="dl">"</span><span class="p">);</span>
 
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
@@ -8209,18 +8265,18 @@ This operation does not require authentication
 
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span> <span class="s">'Accept'</span><span class="p">:</span> <span class="s">"application/json"</span> <span class="p">}</span>
 
-<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"/open-banking/business-unarranged-account-overdraft"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"/open-banking/products-services/v1/business-unarranged-account-overdraft"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
 
 <span class="n">res</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">))</span>
-</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="nc">HttpResponse</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="nc">Unirest</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"https://api.banco.com.br/open-banking/business-unarranged-account-overdraft"</span><span class="o">)</span>
+</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="nc">HttpResponse</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="nc">Unirest</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"https://api.banco.com.br/open-banking/products-services/v1/business-unarranged-account-overdraft"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"Accept"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">asString</span><span class="o">();</span>
 </code></pre></div>
 
-<p><code>GET /business-unarranged-account-overdraft</code></p>
+<p><code>GET /products-services/v1/business-unarranged-account-overdraft</code></p>
 
 <table><thead>
 <tr>
@@ -8232,19 +8288,19 @@ This operation does not require authentication
 </tr>
 </tbody></table>
 
-<h3 id='visao-geral-18'>Visão geral</h3>
+<h3 id='visao-geral-20'>Visão geral</h3>
 
-<p>Obtém os dados de Adiantamento a Depositante para pessoa jurídica.</p>
+<p>Obtém os dados de Adiantamento a Depositante para pessoa natural.</p>
 
 <p>Esta especificação inclui todos os itens relevantes para a Especificação de API de Adiantamento a Depositante para pessoa natural de dados abertos.</p>
 
 <p>Tags: <a href="#glossarioCNPJ">CNPJ (CNPJ Number)</a>, <a href="#glossarioMarca">Marca (Brand)</a>, <a href="#glossarioInstituicaoFinanceira">Instituição Financeira (Company)</a>, <a href="#glossarioTaxaReferencial">Taxa Referencial – TR (Referential Rate)</a>, <a href="#glossarioIndexador">Indexador (Indexer)</a> e <a href="#api-canais-de-atendimento-divulgacao-dos-valores-de-tarifas-e-taxas-de-juros-remuneratorias">Divulgação dos valores de tarifas e taxas de juros remuneratórias (Disclosure of Fees and Interest Rates)</a>.</p>
 
-<h3 id='visao-de-alto-de-nivel-das-estruturas-de-dados-8'>Visão de alto de nível das estruturas de dados</h3>
+<h3 id='visao-de-alto-de-nivel-das-estruturas-de-dados-9'>Visão de alto de nível das estruturas de dados</h3>
 
 <p><img class='lazy' src='images/loading-e35b35a4.gif' data-src='images/tld/TLD_Personal_Unarranged_Account_Overdraft_v1-58f63d70.png'/></p>
 
-<h3 id='dicionario-de-dados-15'>Dicionário de dados</h3>
+<h3 id='dicionario-de-dados-17'>Dicionário de dados</h3>
 
 <p><a href='dictionary/personal_unarranged_account_overdraft.csv' target="_blank">Fazer download do dicionário de dados</a></p>
 
