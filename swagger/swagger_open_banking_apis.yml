@@ -33,7 +33,7 @@ tags:
   - name: API - Operações de Crédito - Adiantamento a Depositantes
   - name: API - Operações de Crédito - Direitos Creditórios Descontados
 paths:
-  /consents:
+  /consents/v1/consents:
     post:
       tags:
         - API - Consentimento
@@ -88,7 +88,7 @@ paths:
       security:
         - OAuth2Security:
             - consents
-  '/consents/{consentId}':
+  '/consents/v1/consents/{consentId}':
     get:
       tags:
         - API - Consentimento
@@ -178,7 +178,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ResponseError'
-  /resources:
+  /resources/v1/resources:
     get:
       tags:
         - API - Resources
