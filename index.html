@@ -31084,8 +31084,11 @@ This operation does not require authentication
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"avaiableAmount"</span><span class="p">:</span><span class="w"> </span><span class="mf">100000.04</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"avaiableAmountCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"blockedAmount"</span><span class="p">:</span><span class="w"> </span><span class="mf">99.9999</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"automaticallyInvestedAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">2566449494219</span><span class="w">
+    </span><span class="nl">"blockedAmountCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"automaticallyInvestedAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">2566449494219</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"automaticallyInvestedAmountCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"self"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.banco.com.br/open-banking/api/v1/resource"</span><span class="p">,</span><span class="w">
@@ -31423,11 +31426,13 @@ This operation does not require authentication
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"transactionId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"29698749425984912674"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"completedAuthorisedPaymentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TRANSACAO_EFETIVADA"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"creditDebitType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DEBITO"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"transactionName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TRANSFCWAR5TXHCX5I9IDBHML8082N8NEO30M6LNNG7ANAYIJYRM00ZBZPU8"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OUTRO"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">500.54</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"transactionCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"transactionDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-07"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"partieCnpjCpf"</span><span class="p">:</span><span class="w"> </span><span class="s2">"43908445778"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"partiePersonType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PESSOA_NATURAL"</span><span class="p">,</span><span class="w">
@@ -31723,7 +31728,11 @@ This operation does not require authentication
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"overdraftContractedLimit"</span><span class="p">:</span><span class="w"> </span><span class="mf">99.9999</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"overdraftUsedLimit"</span><span class="p">:</span><span class="w"> </span><span class="mf">10000.9999</span><span class="w">
+    </span><span class="nl">"overdraftContractedLimitCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"overdraftUsedLimit"</span><span class="p">:</span><span class="w"> </span><span class="mf">10000.9999</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"overdraftUsedLimitCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"unarrangedOverdraftAmount"</span><span class="p">:</span><span class="w"> </span><span class="mf">99.9999</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"unarrangedOverdraftAmountCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"self"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.banco.com.br/open-banking/api/v1/resource"</span><span class="p">,</span><span class="w">
@@ -37939,8 +37948,11 @@ This operation does not require authentication
 <a id="tocsaccountbalancesdata"></a></p>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"avaiableAmount"</span><span class="p">:</span><span class="w"> </span><span class="mf">100000.04</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"avaiableAmountCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"blockedAmount"</span><span class="p">:</span><span class="w"> </span><span class="mf">99.9999</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"automaticallyInvestedAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">2566449494219</span><span class="w">
+  </span><span class="nl">"blockedAmountCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"automaticallyInvestedAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">2566449494219</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"automaticallyInvestedAmountCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
 </span></code></pre></div>
@@ -37959,21 +37971,39 @@ This operation does not require authentication
 </thead><tbody>
 <tr>
 <td>avaiableAmount</td>
-<td>number(double)</td>
+<td>number(double)¦null</td>
 <td>true</td>
-<td>Saldo disponível para utilização imediata. No caso de conta de depósito a vista, sem considerar cheque especial e investimentos atrelados a conta. Admite saldo negativo. Expresso em valor monetário com 4 casas decimais</td>
+<td>Saldo disponível para utilização imediata. No caso de conta de depósito a vista, sem considerar cheque especial e investimentos atrelados a conta. Admite saldo negativo. Expresso em valor monetário com 4 casas decimais.</td>
+</tr>
+<tr>
+<td>avaiableAmountCurrency</td>
+<td>string</td>
+<td>true</td>
+<td>Moeda referente ao valor do saldo disponível, segundo modelo ISO-4217. p.ex. &#39;BRL&#39;</td>
 </tr>
 <tr>
 <td>blockedAmount</td>
-<td>number(double)</td>
+<td>number(double)¦null</td>
 <td>true</td>
-<td>Saldo bloqueado, não disponível para utilização imediata, por motivo de bloqueio apresentado para o cliente nos canais eletrônicos Expresso em valor monetário com 4 casas decimais</td>
+<td>Saldo bloqueado, não disponível para utilização imediata, por motivo de bloqueio apresentado para o cliente nos canais eletrônicos Expresso em valor monetário com 4 casas decimais.</td>
+</tr>
+<tr>
+<td>blockedAmountCurrency</td>
+<td>string</td>
+<td>true</td>
+<td>Moeda referente ao valor do saldo bloqueado, segundo modelo ISO-4217. p.ex. &#39;BRL&#39;</td>
 </tr>
 <tr>
 <td>automaticallyInvestedAmount</td>
-<td>number(double)</td>
+<td>number(double)¦null</td>
 <td>true</td>
-<td>Saldo disponível com aplicação automática - corresponde a soma do saldo disponível acrescido do valor obtido a partir da aplicação automática Expresso em valor monetário com 4 casas decimais</td>
+<td>Saldo disponível com aplicação automática - corresponde a soma do saldo disponível acrescido do valor obtido a partir da aplicação automática Expresso em valor monetário com 4 casas decimais.</td>
+</tr>
+<tr>
+<td>automaticallyInvestedAmountCurrency</td>
+<td>string</td>
+<td>true</td>
+<td>Moeda referente ao valor do saldo disponível com aplicação automática, segundo modelo ISO-4217. p.ex. &#39;BRL&#39;</td>
 </tr>
 </tbody></table>
 
@@ -38125,7 +38155,7 @@ This operation does not require authentication
 <td>subtype</td>
 <td><a href="#schemaenumaccountsubtype">EnumAccountSubType</a></td>
 <td>true</td>
-<td>Subtipo de conta (vide Enum): <br>Conta individual - possui um único titular<br>Conta conjunta solidária - é a modalidade cujos titulares podem realizar movimentações de forma isolada, isto é, sem que seja necessária a autorização dos demais titulares<br>Conta conjunta não solidária - onde as movimentações financeiras só podem serem realizadas mediante autorização de TODOS os correntistas da conta.</td>
+<td>Subtipo de conta (vide Enum): <br>Conta individual - possui um único titular<br>Conta conjunta simples - onde as movimentações financeiras só podem serem realizadas mediante autorização de TODOS os correntistas da conta.<br>Conta conjunta solidária - é a modalidade cujos titulares podem realizar movimentações de forma isolada, isto é, sem que seja necessária a autorização dos demais titulares</td>
 </tr>
 <tr>
 <td>currency</td>
@@ -38225,7 +38255,11 @@ This operation does not require authentication
 
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"overdraftContractedLimit"</span><span class="p">:</span><span class="w"> </span><span class="mf">99.9999</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"overdraftUsedLimit"</span><span class="p">:</span><span class="w"> </span><span class="mf">10000.9999</span><span class="w">
+  </span><span class="nl">"overdraftContractedLimitCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"overdraftUsedLimit"</span><span class="p">:</span><span class="w"> </span><span class="mf">10000.9999</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"overdraftUsedLimitCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"unarrangedOverdraftAmount"</span><span class="p">:</span><span class="w"> </span><span class="mf">99.9999</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"unarrangedOverdraftAmountCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
 </span></code></pre></div>
@@ -38244,15 +38278,39 @@ This operation does not require authentication
 </thead><tbody>
 <tr>
 <td>overdraftContractedLimit</td>
-<td>number(double)</td>
+<td>number(double)¦null</td>
 <td>true</td>
-<td>Valor do limite contratado do cheque especial</td>
+<td>Valor do limite contratado do cheque especial.</td>
+</tr>
+<tr>
+<td>overdraftContractedLimitCurrency</td>
+<td>string</td>
+<td>true</td>
+<td>Moeda referente ao valor do limite contratado do cheque especial, segundo modelo ISO-4217. p.ex. &#39;BRL&#39;.</td>
 </tr>
 <tr>
 <td>overdraftUsedLimit</td>
-<td>number(double)</td>
+<td>number(double)¦null</td>
 <td>true</td>
 <td>Valor utilizado total do limite do cheque especial e o adiantamento a depositante.</td>
+</tr>
+<tr>
+<td>overdraftUsedLimitCurrency</td>
+<td>string</td>
+<td>true</td>
+<td>Moeda referente ao valor utilizado total do limite do cheque especial e o adiantamento a depositante, segundo modelo ISO-4217. p.ex. &#39;BRL&#39;.</td>
+</tr>
+<tr>
+<td>unarrangedOverdraftAmount</td>
+<td>number(double)</td>
+<td>true</td>
+<td>Valor de operação contratada em caráter emergencial para cobertura de saldo devedor em conta de depósitos à vista e de excesso sobre o limite pactuado de cheque especial.</td>
+</tr>
+<tr>
+<td>unarrangedOverdraftAmountCurrency</td>
+<td>string</td>
+<td>true</td>
+<td>Moeda referente ao valor de operação contratada em caráter emergencial para cobertura de saldo devedor em conta de depósitos à vista e de excesso sobre o limite pactuado de cheque especial, segundo modelo ISO-4217. p.ex. &#39;BRL&#39;.</td>
 </tr>
 </tbody></table>
 
@@ -38264,11 +38322,13 @@ This operation does not require authentication
 <a id="tocsaccounttransactionsdata"></a></p>
 
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"transactionId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"29698749425984912674"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"completedAuthorisedPaymentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TRANSACAO_EFETIVADA"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"creditDebitType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DEBITO"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"transactionName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TRANSFCWAR5TXHCX5I9IDBHML8082N8NEO30M6LNNG7ANAYIJYRM00ZBZPU8"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OUTRO"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">500.54</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"transactionCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"transactionDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-07"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"partieCnpjCpf"</span><span class="p">:</span><span class="w"> </span><span class="s2">"43908445778"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"partiePersonType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PESSOA_NATURAL"</span><span class="p">,</span><span class="w">
@@ -38288,6 +38348,12 @@ This operation does not require authentication
 </tr>
 </thead><tbody>
 <tr>
+<td>transactionId</td>
+<td>string</td>
+<td>false</td>
+<td>Código ou identificador único prestado pela instituição que mantém a conta para representar a transação individual.</td>
+</tr>
+<tr>
 <td>completedAuthorisedPaymentType</td>
 <td><a href="#schemaenumcompletedauthorisedpaymentindicator">EnumCompletedAuthorisedPaymentIndicator</a></td>
 <td>true</td>
@@ -38297,7 +38363,7 @@ This operation does not require authentication
 <td>creditDebitType</td>
 <td><a href="#schemaenumcreditdebitindicator">EnumCreditDebitIndicator</a></td>
 <td>true</td>
-<td>Indicador do tipo de lançamento: <br>- Crédito<br>- Débito</td>
+<td>Indicador do tipo de lançamento: <br>Débito (no extrato) Em um extrato bancário, os débitos, marcados com a letra “D” ao lado do valor registrado, informam as saídas de dinheiro na conta-corrente.<br>Crédito (no extrato) Em um extrato bancário, os créditos, marcados com a letra “C” ao lado do valor registrado, informam as entradas de dinheiro na conta-corrente.</td>
 </tr>
 <tr>
 <td>transactionName</td>
@@ -38318,6 +38384,12 @@ This operation does not require authentication
 <td>Valor da transação. Expressa em valor monetário com 4 casas decimais.</td>
 </tr>
 <tr>
+<td>transactionCurrency</td>
+<td>string</td>
+<td>true</td>
+<td>Moeda referente ao valor da transação, segundo modelo ISO-4217. p.ex. &#39;BRL&#39;.</td>
+</tr>
+<tr>
 <td>transactionDate</td>
 <td>string</td>
 <td>true</td>
@@ -38326,37 +38398,37 @@ This operation does not require authentication
 <tr>
 <td>partieCnpjCpf</td>
 <td>string</td>
-<td>false</td>
+<td>true</td>
 <td>Identificação da pessoa envolvida na transação: pagador ou recebedor (Preencher com o CPF ou CNPJ, sem formatação)</td>
 </tr>
 <tr>
 <td>partiePersonType</td>
 <td>string</td>
-<td>false</td>
+<td>true</td>
 <td>Identificação do Tipo de Pessoa da pessoa envolvida na transação.<br>Pessoa Natural - Informar CPF no campo “payerCnpjCpf”<br>Pessoa Jurídica - Informar CNPJ no campo “payerCnpjCpf”</td>
 </tr>
 <tr>
 <td>partieCompeCode</td>
 <td>string</td>
-<td>false</td>
+<td>true</td>
 <td>Código identificador atribuído pelo Banco Central do Brasil às instituições participantes do STR (Sistema de Transferência de reservas) referente à pessoa envolvida na transação. O número-código substituiu o antigo código COMPE. Todos os participantes do STR, exceto as Infraestruturas do Mercado Financeiro (IMF) e a Secretaria do Tesouro Nacional, possuem um número-código independentemente de participarem da Centralizadora da Compensação de Cheques (Compe). O campo tem a anotação “n/a” (“não se aplica”) para os participantes do STR aos quais não é atribuído um número-código</td>
 </tr>
 <tr>
 <td>partieBranchCode</td>
 <td>string</td>
-<td>false</td>
+<td>true</td>
 <td>Código da Agência detentora da conta da pessoa envolvida na transação. (Agência é a dependência destinada ao atendimento aos clientes, ao público em geral e aos associados de cooperativas de crédito, no exercício de atividades da instituição, não podendo ser móvel ou transitória)</td>
 </tr>
 <tr>
 <td>partieNumber</td>
 <td>string</td>
-<td>false</td>
+<td>true</td>
 <td>Número da conta da pessoa envolvida na transação</td>
 </tr>
 <tr>
 <td>partieCheckDigit</td>
 <td>string</td>
-<td>false</td>
+<td>true</td>
 <td>Dígito da conta da pessoa envolvida na transação</td>
 </tr>
 </tbody></table>
@@ -39449,7 +39521,7 @@ This operation does not require authentication
 <td>creditDebitType</td>
 <td><a href="#schemaenumcreditdebitindicator">EnumCreditDebitIndicator</a></td>
 <td>true</td>
-<td>Indicador do tipo de lançamento: <br>- Crédito<br>- Débito</td>
+<td>Indicador do tipo de lançamento: <br>Débito (no extrato) Em um extrato bancário, os débitos, marcados com a letra “D” ao lado do valor registrado, informam as saídas de dinheiro na conta-corrente.<br>Crédito (no extrato) Em um extrato bancário, os créditos, marcados com a letra “C” ao lado do valor registrado, informam as entradas de dinheiro na conta-corrente.</td>
 </tr>
 <tr>
 <td>transactionType</td>
@@ -39966,8 +40038,8 @@ This operation does not require authentication
 
 <p>Subtipo de conta (vide Enum): 
 Conta individual - possui um único titular
-Conta conjunta solidária - é a modalidade cujos titulares podem realizar movimentações de forma isolada, isto é, sem que seja necessária a autorização dos demais titulares
-Conta conjunta não solidária - onde as movimentações financeiras só podem serem realizadas mediante autorização de TODOS os correntistas da conta.</p>
+Conta conjunta simples - onde as movimentações financeiras só podem serem realizadas mediante autorização de TODOS os correntistas da conta.
+Conta conjunta solidária - é a modalidade cujos titulares podem realizar movimentações de forma isolada, isto é, sem que seja necessária a autorização dos demais titulares</p>
 
 <h3 id='propriedades-32'>Propriedades</h3>
 
@@ -39983,7 +40055,7 @@ Conta conjunta não solidária - onde as movimentações financeiras só podem s
 <td>**</td>
 <td>string</td>
 <td>false</td>
-<td>Subtipo de conta (vide Enum): <br>Conta individual - possui um único titular<br>Conta conjunta solidária - é a modalidade cujos titulares podem realizar movimentações de forma isolada, isto é, sem que seja necessária a autorização dos demais titulares<br>Conta conjunta não solidária - onde as movimentações financeiras só podem serem realizadas mediante autorização de TODOS os correntistas da conta.</td>
+<td>Subtipo de conta (vide Enum): <br>Conta individual - possui um único titular<br>Conta conjunta simples - onde as movimentações financeiras só podem serem realizadas mediante autorização de TODOS os correntistas da conta.<br>Conta conjunta solidária - é a modalidade cujos titulares podem realizar movimentações de forma isolada, isto é, sem que seja necessária a autorização dos demais titulares</td>
 </tr>
 </tbody></table>
 
@@ -40001,11 +40073,11 @@ Conta conjunta não solidária - onde as movimentações financeiras só podem s
 </tr>
 <tr>
 <td>**</td>
-<td>CONJUNTA_SOLIDARIA</td>
+<td>CONJUNTA_SIMPLES</td>
 </tr>
 <tr>
 <td>**</td>
-<td>CONJUNTA_NAO_SOLIDARIA</td>
+<td>CONJUNTA_SOLIDARIA</td>
 </tr>
 </tbody></table>
 
@@ -43513,8 +43585,8 @@ incidem na fatura da conta de pagamento pós-paga. (Vide Enum)
 </span></code></pre></div>
 
 <p>Indicador do tipo de lançamento: 
-- Crédito
-- Débito</p>
+Débito (no extrato) Em um extrato bancário, os débitos, marcados com a letra “D” ao lado do valor registrado, informam as saídas de dinheiro na conta-corrente.
+Crédito (no extrato) Em um extrato bancário, os créditos, marcados com a letra “C” ao lado do valor registrado, informam as entradas de dinheiro na conta-corrente.</p>
 
 <h3 id='propriedades-80'>Propriedades</h3>
 
@@ -43530,7 +43602,7 @@ incidem na fatura da conta de pagamento pós-paga. (Vide Enum)
 <td>**</td>
 <td>string</td>
 <td>false</td>
-<td>Indicador do tipo de lançamento: <br>- Crédito<br>- Débito</td>
+<td>Indicador do tipo de lançamento: <br>Débito (no extrato) Em um extrato bancário, os débitos, marcados com a letra “D” ao lado do valor registrado, informam as saídas de dinheiro na conta-corrente.<br>Crédito (no extrato) Em um extrato bancário, os créditos, marcados com a letra “C” ao lado do valor registrado, informam as entradas de dinheiro na conta-corrente.</td>
 </tr>
 </tbody></table>
 
@@ -44315,11 +44387,7 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
 </tr>
 <tr>
 <td>**</td>
-<td>CONVENIO</td>
-</tr>
-<tr>
-<td>**</td>
-<td>ARRECADACAO</td>
+<td>CONVENIO_ARRECADACAO</td>
 </tr>
 <tr>
 <td>**</td>
@@ -44347,19 +44415,23 @@ Procurador - é qualquer pessoa que represente a Pessoa Natural em algum negóci
 </tr>
 <tr>
 <td>**</td>
-<td>JUROS_CHEQUE_ESPECIAL</td>
+<td>ENCARGOS_JUROS_CHEQUE_ESPECIAL</td>
 </tr>
 <tr>
 <td>**</td>
-<td>RENDIMENTO</td>
+<td>RENDIMENTO_APLIC_FINANCEIRA</td>
 </tr>
 <tr>
 <td>**</td>
-<td>RECEBIVEIS_CARTAO_DEBITO</td>
+<td>PORTABILIDADE_SALARIO</td>
 </tr>
 <tr>
 <td>**</td>
-<td>RECEBIVEIS_CARTAO_CREDITO</td>
+<td>RESGATE_APLIC_FINANCEIRA</td>
+</tr>
+<tr>
+<td>**</td>
+<td>OPERACAO_CREDITO</td>
 </tr>
 <tr>
 <td>**</td>
@@ -48890,8 +48962,11 @@ Comercialização, Financiamento habitacional SFH e Financiamento habitacional e
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"avaiableAmount"</span><span class="p">:</span><span class="w"> </span><span class="mf">100000.04</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"avaiableAmountCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"blockedAmount"</span><span class="p">:</span><span class="w"> </span><span class="mf">99.9999</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"automaticallyInvestedAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">2566449494219</span><span class="w">
+    </span><span class="nl">"blockedAmountCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"automaticallyInvestedAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">2566449494219</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"automaticallyInvestedAmountCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"self"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.banco.com.br/open-banking/api/v1/resource"</span><span class="p">,</span><span class="w">
@@ -49004,7 +49079,11 @@ Comercialização, Financiamento habitacional SFH e Financiamento habitacional e
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"overdraftContractedLimit"</span><span class="p">:</span><span class="w"> </span><span class="mf">99.9999</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"overdraftUsedLimit"</span><span class="p">:</span><span class="w"> </span><span class="mf">10000.9999</span><span class="w">
+    </span><span class="nl">"overdraftContractedLimitCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"overdraftUsedLimit"</span><span class="p">:</span><span class="w"> </span><span class="mf">10000.9999</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"overdraftUsedLimitCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"unarrangedOverdraftAmount"</span><span class="p">:</span><span class="w"> </span><span class="mf">99.9999</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"unarrangedOverdraftAmountCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"self"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.banco.com.br/open-banking/api/v1/resource"</span><span class="p">,</span><span class="w">
@@ -49058,11 +49137,13 @@ Comercialização, Financiamento habitacional SFH e Financiamento habitacional e
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"transactionId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"29698749425984912674"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"completedAuthorisedPaymentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TRANSACAO_EFETIVADA"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"creditDebitType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DEBITO"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"transactionName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TRANSFCWAR5TXHCX5I9IDBHML8082N8NEO30M6LNNG7ANAYIJYRM00ZBZPU8"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OUTRO"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">500.54</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"transactionCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"transactionDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-07"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"partieCnpjCpf"</span><span class="p">:</span><span class="w"> </span><span class="s2">"43908445778"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"partiePersonType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PESSOA_NATURAL"</span><span class="p">,</span><span class="w">
