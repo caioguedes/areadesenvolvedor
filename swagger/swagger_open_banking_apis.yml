@@ -3244,8 +3244,11 @@ components:
         Conjunto de informações das Contas de: depósito à vista, poupança e de pagamento pré-paga
       required:
         - avaiableAmount
+        - avaiableAmountCurrency
         - blockedAmount
+        - blockedAmountCurrency
         - automaticallyInvestedAmount
+        - automaticallyInvestedAmountCurrency
       properties:
         avaiableAmount:
           type: number
@@ -3256,6 +3259,12 @@ components:
           minLength: 0
           nullable: true
           example: 100000.04
+        avaiableAmountCurrency:
+          type: string
+          pattern: '^(\w{3}){1}$'
+          maxLength: 3
+          description: 'Moeda referente ao valor do saldo disponível, segundo modelo ISO-4217. p.ex. ''BRL'''
+          example: BRL
         blockedAmount:
           type: number
           format: double
@@ -3265,6 +3274,12 @@ components:
           minLength: 0
           nullable: true
           example: 99.9999
+        blockedAmountCurrency:
+          type: string
+          pattern: '^(\w{3}){1}$'
+          maxLength: 3
+          description: 'Moeda referente ao valor do saldo bloqueado, segundo modelo ISO-4217. p.ex. ''BRL'''
+          example: BRL
         automaticallyInvestedAmount:
           type: number
           format: double
@@ -3274,6 +3289,12 @@ components:
           minLength: 0
           nullable: true
           example: 2566449494219
+        automaticallyInvestedAmountCurrency:
+          type: string
+          pattern: '^(\w{3}){1}$'
+          maxLength: 3
+          description: 'Moeda referente ao valor do saldo disponível com aplicação automática, segundo modelo ISO-4217. p.ex. ''BRL'''
+          example: BRL
       additionalProperties: false
     AccountData:
       type: object
@@ -3448,7 +3469,11 @@ components:
         Conjunto de informações da Conta de: depósito à vista
       required:
         - overdraftContractedLimit
+        - overdraftContractedLimitCurrency
         - overdraftUsedLimit
+        - overdraftUsedLimitCurrency
+        - unarrangedOverdraftAmount
+        - unarrangedOverdraftAmountCurrency
       properties:
         overdraftContractedLimit:
           type: number
@@ -3459,6 +3484,12 @@ components:
           minLength: 0
           nullable: true
           example: 99.9999
+        overdraftContractedLimitCurrency:
+          type: string
+          pattern: '^(\w{3}){1}$'
+          maxLength: 3
+          description: 'Moeda referente ao valor do limite contratado do cheque especial, segundo modelo ISO-4217. p.ex. ''BRL''.'
+          example: BRL
         overdraftUsedLimit:
           type: number
           format: double
@@ -3468,6 +3499,26 @@ components:
           minLength: 0
           nullable: true
           example: 10000.9999
+        overdraftUsedLimitCurrency:
+          type: string
+          pattern: '^(\w{3}){1}$'
+          maxLength: 3
+          description: 'Moeda referente ao valor utilizado total do limite do cheque especial e o adiantamento a depositante, segundo modelo ISO-4217. p.ex. ''BRL''.'
+          example: BRL
+        unarrangedOverdraftAmount:
+          type: number
+          format: double
+          pattern: '(-?\d{15}(.\d{4}?))$'
+          description: Valor de operação contratada em caráter emergencial para cobertura de saldo devedor em conta de depósitos à vista e de excesso sobre o limite pactuado de cheque especial.
+          maxLength: 19
+          minLength: 0
+          example: 99.9999
+        unarrangedOverdraftAmountCurrency:
+          type: string
+          pattern: '^(\w{3}){1}$'
+          maxLength: 3
+          description: 'Moeda referente ao valor de operação contratada em caráter emergencial para cobertura de saldo devedor em conta de depósitos à vista e de excesso sobre o limite pactuado de cheque especial, segundo modelo ISO-4217. p.ex. ''BRL''.'
+          example: BRL
       additionalProperties: false
     AccountTransactionsData:
       type: object
@@ -3477,6 +3528,7 @@ components:
         - transactionName
         - type
         - amount
+        - transactionCurrency
         - transactionDate
         - partieCnpjCpf
         - partiePersonType
@@ -3485,6 +3537,12 @@ components:
         - partieNumber
         - partieCheckDigit
       properties:
+        transactionId:
+          type: string
+          description: Código ou identificador único prestado pela instituição que mantém a conta para representar a transação individual.
+          maxLength: 100
+          pattern: \w*\W*
+          example: '29698749425984912674'
         completedAuthorisedPaymentType:
           $ref: '#/components/schemas/EnumCompletedAuthorisedPaymentIndicator'
         creditDebitType:
@@ -3505,6 +3563,12 @@ components:
           maxLength: 19
           minLength: 0
           example: 500.54
+        transactionCurrency:
+          type: string
+          pattern: '^(\w{3}){1}$'
+          maxLength: 3
+          description: 'Moeda referente ao valor da transação, segundo modelo ISO-4217. p.ex. ''BRL''.'
+          example: BRL
         transactionDate:
           type: string
           maxLength: 10
@@ -4501,13 +4565,13 @@ components:
       type: string
       enum:
         - INDIVIDUAL
+        - CONJUNTA_SIMPLES
         - CONJUNTA_SOLIDARIA
-        - CONJUNTA_NAO_SOLIDARIA
       description: |
         Subtipo de conta (vide Enum): 
         Conta individual - possui um único titular
+        Conta conjunta simples - onde as movimentações financeiras só podem serem realizadas mediante autorização de TODOS os correntistas da conta.
         Conta conjunta solidária - é a modalidade cujos titulares podem realizar movimentações de forma isolada, isto é, sem que seja necessária a autorização dos demais titulares
-        Conta conjunta não solidária - onde as movimentações financeiras só podem serem realizadas mediante autorização de TODOS os correntistas da conta.
       example: INDIVIDUAL
     EnumAccountType:
       type: string
@@ -5369,18 +5433,18 @@ components:
         - PIX
         - TRANSFERENCIA_MESMA_INSTITUICAO
         - BOLETO
-        - CONVENIO
-        - ARRECADACAO
+        - CONVENIO_ARRECADACAO
         - PACOTE_TARIFA_SERVICOS
         - TARIFA_SERVICOS_AVULSOS
         - FOLHA_PAGAMENTO
         - DEPOSITO
         - SAQUE
         - CARTAO
-        - JUROS_CHEQUE_ESPECIAL
-        - RENDIMENTO
-        - RECEBIVEIS_CARTAO_DEBITO
-        - RECEBIVEIS_CARTAO_CREDITO
+        - ENCARGOS_JUROS_CHEQUE_ESPECIAL
+        - RENDIMENTO_APLIC_FINANCEIRA
+        - PORTABILIDADE_SALARIO
+        - RESGATE_APLIC_FINANCEIRA
+        - OPERACAO_CREDITO
         - OUTRO
       example: OUTRO
     EnumUnarrangedAccountOverdraftProductType:
