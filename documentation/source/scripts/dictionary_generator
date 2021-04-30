@@ -1,0 +1,133 @@
+#!/usr/bin/env ruby
+require 'yaml'
+require 'pp'
+require 'csv'
+require 'pathname'
+require 'uri'
+
+if ARGV.length < 2
+  puts "Yaml file and output path is required!"
+  puts "Example:"
+  puts "  dictionary_generator swagger_file.yaml generated/"
+  exit 1
+end
+
+filename = Pathname.new ARGV[0];
+oas = YAML.load_file(filename);
+output = Pathname.new ARGV[1]
+output_path = output.realpath.to_s + "/"
+
+headers = {
+  'COLUMN_1'  => 'Xpath',
+  'COLUMN_2'  => 'Nome',
+  'COLUMN_3'  => 'Mandatoriedade',
+  'COLUMN_4'  => 'Localização',
+  'COLUMN_5'  => 'Tipo',
+  'COLUMN_6'  => 'Formato',
+  'COLUMN_7'  => 'Padrão',
+  'COLUMN_8'  => 'Tamanho',
+  'COLUMN_9'  => 'Exemplo',
+  'COLUMN_10' => 'Nulidade',
+  'COLUMN_11' => 'Domínio',
+  'COLUMN_12' => 'Descrição'
+}
+
+# Extract fields from Schema Object recursivily
+def extract_fields(schema, path, fields, ignore = ['links', 'meta'])
+  if ['array', 'object'].include? schema['type']
+    index = 'properties'
+    schema = schema['items'] if schema['type'] == 'array'
+
+    schema[index].select{|key, _| !ignore.include? key}.each_with_index do |(name, spec)|
+      spec['name'] = name
+      spec['isRequired'] = true if schema['required'] and schema['required'].include? name
+
+      fields.concat extract_fields(spec, path + '/' + name, [])
+    end
+    return fields
+  else
+    schema['path'] = path
+    fields.push schema
+    return fields
+  end
+end
+
+# Write headers and rows on given filename
+def generate_csv(filename, headers, rows)
+  CSV.open(filename, 'w+') do |file|
+    file << headers.values
+    rows.each do |row|
+      file << row.values
+    end
+  end
+end
+
+def format_enum(enum)
+  return enum.join(" \n") if enum != nil
+end
+
+# Analyse
+puts "> Starting analyse on " + filename.to_s
+oas['paths'].each_with_index do |(path, methods)|
+  methods.each_with_index do |(op, spec)|
+    rows = []
+    puts '─ ' + op.upcase + ' ' + path
+
+    # Parameters
+    puts '  ├── Extracting fields from parameters...'
+    spec['parameters'] || spec['parameters'].each do |parameter|
+      row = {
+        headers['COLUMN_1']   => '',
+        headers['COLUMN_2']   => parameter['name'],
+        headers['COLUMN_3']   => parameter['required'] ? "Obrigatório" : "Opcional",
+        headers['COLUMN_4']   => parameter['in'],
+        headers['COLUMN_5']   => parameter['schema'] ? parameter['schema']['type'] : nil,
+        headers['COLUMN_6']   => parameter['schema'] ? parameter['schema']['format'] : nil,
+        headers['COLUMN_7']   => parameter['schema'] ? parameter['schema']['pattern']: nil,
+        headers['COLUMN_8']   => parameter['schema'] ? parameter['schema']['maxLength'] : nil,
+        headers['COLUMN_9']   => parameter['example'],
+        headers['COLUMN_10']  => parameter['nullable'] ? "Permitido" : "Não permitido",
+        headers['COLUMN_11']  => format_enum(parameter['enum']),
+        headers['COLUMN_12']  => parameter['description']
+      }
+      rows.push row
+    end
+
+    # Responses
+    puts '  ├── Extracting fields from responses...'
+    spec['responses'].select {|status, _| (200..299).member? status.to_i }.each_with_index do |(status, response)|
+
+      if response['content'] == nil
+        puts '    └── WARN: No content was found!'
+        return
+      end
+
+      extract_fields(response['content']['application/json']['schema'], '', []).each do |field|
+        row = {
+          headers['COLUMN_1']   => field['path'],
+          headers['COLUMN_2']   => field['name'],
+          headers['COLUMN_3']   => field['isRequired'] ? "Obrigatório" : "Opcional",
+          headers['COLUMN_4']   => 'body',
+          headers['COLUMN_5']   => field['type'], #?
+          headers['COLUMN_6']   => field['format'],
+          headers['COLUMN_7']   => field['pattern'],
+          headers['COLUMN_8']   => field['maxLength'],
+          headers['COLUMN_9']   => field['example'],
+          headers['COLUMN_10']  => field['nullable'] ? "Permitido" : "Não permitido",
+          headers['COLUMN_11']  => format_enum(field['enum']),
+          headers['COLUMN_12']  => field['description']
+        }
+        rows.push row
+      end
+    end
+
+    path_name = path.match(/^\/[^\/]*/).to_s.gsub('/', '') + '_' + spec['operationId']
+    filename = output_path + path_name + '.csv'
+    puts '  ├── Writing file ' + filename
+    generate_csv(filename, headers, rows)
+    puts "  └── Finished! \n\n"
+  end
+end
+
+puts '> Files generated!'
+exit 0
